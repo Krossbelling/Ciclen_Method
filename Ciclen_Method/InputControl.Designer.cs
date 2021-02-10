@@ -61,22 +61,27 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label1.Location = new System.Drawing.Point(432, 74);
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label1.Location = new System.Drawing.Point(455, 74);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(217, 19);
+            this.label1.Size = new System.Drawing.Size(252, 20);
             this.label1.TabIndex = 5;
             this.label1.Text = "Дифференциальное уравнение\r\n";
             // 
             // SolveButton
             // 
-            this.SolveButton.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.SolveButton.Location = new System.Drawing.Point(512, 365);
+            this.SolveButton.BackColor = System.Drawing.Color.MidnightBlue;
+            this.SolveButton.FlatAppearance.BorderSize = 0;
+            this.SolveButton.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.SolveButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.SolveButton.ForeColor = System.Drawing.Color.GhostWhite;
+            this.SolveButton.Location = new System.Drawing.Point(527, 365);
             this.SolveButton.Name = "SolveButton";
-            this.SolveButton.Size = new System.Drawing.Size(88, 34);
+            this.SolveButton.Size = new System.Drawing.Size(124, 34);
             this.SolveButton.TabIndex = 9;
             this.SolveButton.Text = "Решить";
-            this.SolveButton.UseVisualStyleBackColor = true;
+            this.SolveButton.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.SolveButton.UseVisualStyleBackColor = false;
             this.SolveButton.Click += new System.EventHandler(this.Solve_Click);
             // 
             // ParametrGroupBox
@@ -95,8 +100,8 @@
             this.ParametrGroupBox.Controls.Add(this.label4);
             this.ParametrGroupBox.Controls.Add(this.label3);
             this.ParametrGroupBox.Controls.Add(this.label2);
-            this.ParametrGroupBox.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.ParametrGroupBox.Location = new System.Drawing.Point(160, 147);
+            this.ParametrGroupBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.ParametrGroupBox.Location = new System.Drawing.Point(183, 147);
             this.ParametrGroupBox.Name = "ParametrGroupBox";
             this.ParametrGroupBox.Size = new System.Drawing.Size(319, 170);
             this.ParametrGroupBox.TabIndex = 8;
@@ -112,7 +117,7 @@
             // 
             // eps_textbox
             // 
-            this.eps_textbox.Location = new System.Drawing.Point(238, 100);
+            this.eps_textbox.Location = new System.Drawing.Point(243, 102);
             this.eps_textbox.Name = "eps_textbox";
             this.eps_textbox.Size = new System.Drawing.Size(29, 26);
             this.eps_textbox.TabIndex = 1;
@@ -157,7 +162,7 @@
             this.label9.BackColor = System.Drawing.Color.Transparent;
             this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label9.ForeColor = System.Drawing.Color.Black;
-            this.label9.Location = new System.Drawing.Point(227, 102);
+            this.label9.Location = new System.Drawing.Point(232, 104);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(14, 20);
             this.label9.TabIndex = 0;
@@ -166,70 +171,70 @@
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label8.Location = new System.Drawing.Point(210, 114);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(22, 16);
+            this.label8.Size = new System.Drawing.Size(27, 20);
             this.label8.TabIndex = 0;
             this.label8.Text = "10";
             // 
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label7.Location = new System.Drawing.Point(183, 114);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(24, 16);
+            this.label7.Size = new System.Drawing.Size(29, 20);
             this.label7.TabIndex = 0;
             this.label7.Text = "E=";
             // 
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label6.Location = new System.Drawing.Point(183, 75);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(29, 16);
+            this.label6.Size = new System.Drawing.Size(34, 20);
             this.label6.TabIndex = 0;
             this.label6.Text = "y0=";
             // 
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label5.Location = new System.Drawing.Point(183, 35);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(23, 16);
+            this.label5.Size = new System.Drawing.Size(27, 20);
             this.label5.TabIndex = 0;
             this.label5.Text = "b=";
             // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label4.Location = new System.Drawing.Point(7, 115);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(25, 16);
+            this.label4.Size = new System.Drawing.Size(29, 20);
             this.label4.TabIndex = 0;
             this.label4.Text = "N=";
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label3.Location = new System.Drawing.Point(7, 76);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(28, 16);
+            this.label3.Size = new System.Drawing.Size(34, 20);
             this.label3.TabIndex = 0;
             this.label3.Text = "x0=";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label2.Location = new System.Drawing.Point(7, 36);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(23, 16);
+            this.label2.Size = new System.Drawing.Size(27, 20);
             this.label2.TabIndex = 0;
             this.label2.Text = "a=";
             // 
@@ -241,8 +246,8 @@
             this.MethodGroupBox.Controls.Add(this.Euler_recalBox);
             this.MethodGroupBox.Controls.Add(this.ChordBox);
             this.MethodGroupBox.Controls.Add(this.EulerBox);
-            this.MethodGroupBox.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.MethodGroupBox.Location = new System.Drawing.Point(651, 147);
+            this.MethodGroupBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.MethodGroupBox.Location = new System.Drawing.Point(674, 147);
             this.MethodGroupBox.Name = "MethodGroupBox";
             this.MethodGroupBox.Size = new System.Drawing.Size(234, 170);
             this.MethodGroupBox.TabIndex = 6;
@@ -254,7 +259,7 @@
             this.AdamsBox.AutoSize = true;
             this.AdamsBox.Location = new System.Drawing.Point(19, 141);
             this.AdamsBox.Name = "AdamsBox";
-            this.AdamsBox.Size = new System.Drawing.Size(78, 23);
+            this.AdamsBox.Size = new System.Drawing.Size(87, 24);
             this.AdamsBox.TabIndex = 0;
             this.AdamsBox.Text = "Адемса";
             this.AdamsBox.UseVisualStyleBackColor = true;
@@ -264,7 +269,7 @@
             this.MilnaBox.AutoSize = true;
             this.MilnaBox.Location = new System.Drawing.Point(19, 118);
             this.MilnaBox.Name = "MilnaBox";
-            this.MilnaBox.Size = new System.Drawing.Size(75, 23);
+            this.MilnaBox.Size = new System.Drawing.Size(78, 24);
             this.MilnaBox.TabIndex = 0;
             this.MilnaBox.Text = "Милна";
             this.MilnaBox.UseVisualStyleBackColor = true;
@@ -274,7 +279,7 @@
             this.Runge_kuttaBox.AutoSize = true;
             this.Runge_kuttaBox.Location = new System.Drawing.Point(19, 95);
             this.Runge_kuttaBox.Name = "Runge_kuttaBox";
-            this.Runge_kuttaBox.Size = new System.Drawing.Size(105, 23);
+            this.Runge_kuttaBox.Size = new System.Drawing.Size(116, 24);
             this.Runge_kuttaBox.TabIndex = 0;
             this.Runge_kuttaBox.Text = "Рунге кутта";
             this.Runge_kuttaBox.UseVisualStyleBackColor = true;
@@ -284,7 +289,7 @@
             this.Euler_recalBox.AutoSize = true;
             this.Euler_recalBox.Location = new System.Drawing.Point(19, 72);
             this.Euler_recalBox.Name = "Euler_recalBox";
-            this.Euler_recalBox.Size = new System.Drawing.Size(171, 23);
+            this.Euler_recalBox.Size = new System.Drawing.Size(193, 24);
             this.Euler_recalBox.TabIndex = 0;
             this.Euler_recalBox.Text = "Эйлера с пересчётом";
             this.Euler_recalBox.UseVisualStyleBackColor = true;
@@ -294,7 +299,7 @@
             this.ChordBox.AutoSize = true;
             this.ChordBox.Location = new System.Drawing.Point(19, 49);
             this.ChordBox.Name = "ChordBox";
-            this.ChordBox.Size = new System.Drawing.Size(62, 23);
+            this.ChordBox.Size = new System.Drawing.Size(68, 24);
             this.ChordBox.TabIndex = 0;
             this.ChordBox.Text = "Хорд";
             this.ChordBox.UseVisualStyleBackColor = true;
@@ -304,14 +309,14 @@
             this.EulerBox.AutoSize = true;
             this.EulerBox.Location = new System.Drawing.Point(19, 26);
             this.EulerBox.Name = "EulerBox";
-            this.EulerBox.Size = new System.Drawing.Size(78, 23);
+            this.EulerBox.Size = new System.Drawing.Size(86, 24);
             this.EulerBox.TabIndex = 0;
             this.EulerBox.Text = "Эйлера";
             this.EulerBox.UseVisualStyleBackColor = true;
             // 
             // dif_textbox
             // 
-            this.dif_textbox.Location = new System.Drawing.Point(377, 96);
+            this.dif_textbox.Location = new System.Drawing.Point(400, 96);
             this.dif_textbox.Name = "dif_textbox";
             this.dif_textbox.Size = new System.Drawing.Size(330, 20);
             this.dif_textbox.TabIndex = 7;
