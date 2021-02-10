@@ -36,16 +36,18 @@
             // 
             this.Panel.Location = new System.Drawing.Point(12, 12);
             this.Panel.Name = "Panel";
-            this.Panel.Size = new System.Drawing.Size(1125, 508);
+            this.Panel.Size = new System.Drawing.Size(1120, 508);
             this.Panel.TabIndex = 5;
             // 
             // MainForm
             // 
+            this.AllowDrop = true;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.ClientSize = new System.Drawing.Size(1173, 545);
+            this.ClientSize = new System.Drawing.Size(1141, 545);
             this.Controls.Add(this.Panel);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "MainForm";
             this.Text = "Решение дифференциального уравнения";

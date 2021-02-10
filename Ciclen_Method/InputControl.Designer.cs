@@ -62,7 +62,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label1.Location = new System.Drawing.Point(226, 113);
+            this.label1.Location = new System.Drawing.Point(432, 74);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(217, 19);
             this.label1.TabIndex = 5;
@@ -71,7 +71,7 @@
             // SolveButton
             // 
             this.SolveButton.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.SolveButton.Location = new System.Drawing.Point(809, 371);
+            this.SolveButton.Location = new System.Drawing.Point(512, 365);
             this.SolveButton.Name = "SolveButton";
             this.SolveButton.Size = new System.Drawing.Size(88, 34);
             this.SolveButton.TabIndex = 9;
@@ -96,9 +96,9 @@
             this.ParametrGroupBox.Controls.Add(this.label3);
             this.ParametrGroupBox.Controls.Add(this.label2);
             this.ParametrGroupBox.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.ParametrGroupBox.Location = new System.Drawing.Point(194, 203);
+            this.ParametrGroupBox.Location = new System.Drawing.Point(160, 147);
             this.ParametrGroupBox.Name = "ParametrGroupBox";
-            this.ParametrGroupBox.Size = new System.Drawing.Size(330, 170);
+            this.ParametrGroupBox.Size = new System.Drawing.Size(319, 170);
             this.ParametrGroupBox.TabIndex = 8;
             this.ParametrGroupBox.TabStop = false;
             this.ParametrGroupBox.Text = "Параметры";
@@ -112,9 +112,9 @@
             // 
             // eps_textbox
             // 
-            this.eps_textbox.Location = new System.Drawing.Point(247, 100);
+            this.eps_textbox.Location = new System.Drawing.Point(238, 100);
             this.eps_textbox.Name = "eps_textbox";
-            this.eps_textbox.Size = new System.Drawing.Size(51, 26);
+            this.eps_textbox.Size = new System.Drawing.Size(29, 26);
             this.eps_textbox.TabIndex = 1;
             this.eps_textbox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.Number);
             // 
@@ -157,7 +157,7 @@
             this.label9.BackColor = System.Drawing.Color.Transparent;
             this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label9.ForeColor = System.Drawing.Color.Black;
-            this.label9.Location = new System.Drawing.Point(227, 100);
+            this.label9.Location = new System.Drawing.Point(227, 102);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(14, 20);
             this.label9.TabIndex = 0;
@@ -242,9 +242,9 @@
             this.MethodGroupBox.Controls.Add(this.ChordBox);
             this.MethodGroupBox.Controls.Add(this.EulerBox);
             this.MethodGroupBox.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.MethodGroupBox.Location = new System.Drawing.Point(663, 113);
+            this.MethodGroupBox.Location = new System.Drawing.Point(651, 147);
             this.MethodGroupBox.Name = "MethodGroupBox";
-            this.MethodGroupBox.Size = new System.Drawing.Size(234, 184);
+            this.MethodGroupBox.Size = new System.Drawing.Size(234, 170);
             this.MethodGroupBox.TabIndex = 6;
             this.MethodGroupBox.TabStop = false;
             this.MethodGroupBox.Text = "Методы";
@@ -311,7 +311,7 @@
             // 
             // dif_textbox
             // 
-            this.dif_textbox.Location = new System.Drawing.Point(194, 139);
+            this.dif_textbox.Location = new System.Drawing.Point(377, 96);
             this.dif_textbox.Name = "dif_textbox";
             this.dif_textbox.Size = new System.Drawing.Size(330, 20);
             this.dif_textbox.TabIndex = 7;

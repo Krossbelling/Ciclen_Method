@@ -14,7 +14,7 @@ namespace Ciclen_Method
     {
         
         public ResultControl()
-        {
+        {            
             InitializeComponent();
 
             for (int i = 0; i < InputControl.N; i++)
