@@ -30,126 +30,154 @@
         {
             this.label1 = new System.Windows.Forms.Label();
             this.SolveButton = new System.Windows.Forms.Button();
-            this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.ParametrGroupBox = new System.Windows.Forms.GroupBox();
             this.N_numUpDown = new System.Windows.Forms.NumericUpDown();
             this.eps_textbox = new System.Windows.Forms.TextBox();
             this.y0_textbox = new System.Windows.Forms.TextBox();
             this.b_textbox = new System.Windows.Forms.TextBox();
             this.x0_textbox = new System.Windows.Forms.TextBox();
             this.a_textbox = new System.Windows.Forms.TextBox();
+            this.label9 = new System.Windows.Forms.Label();
+            this.label8 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.checkBox6 = new System.Windows.Forms.CheckBox();
-            this.checkBox5 = new System.Windows.Forms.CheckBox();
-            this.checkBox4 = new System.Windows.Forms.CheckBox();
-            this.checkBox3 = new System.Windows.Forms.CheckBox();
+            this.MethodGroupBox = new System.Windows.Forms.GroupBox();
+            this.AdamsBox = new System.Windows.Forms.CheckBox();
+            this.MilnaBox = new System.Windows.Forms.CheckBox();
+            this.Runge_kuttaBox = new System.Windows.Forms.CheckBox();
+            this.Euler_recalBox = new System.Windows.Forms.CheckBox();
             this.ChordBox = new System.Windows.Forms.CheckBox();
             this.EulerBox = new System.Windows.Forms.CheckBox();
             this.dif_textbox = new System.Windows.Forms.TextBox();
-            this.groupBox2.SuspendLayout();
+            this.ParametrGroupBox.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.N_numUpDown)).BeginInit();
-            this.groupBox1.SuspendLayout();
+            this.MethodGroupBox.SuspendLayout();
             this.SuspendLayout();
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label1.Location = new System.Drawing.Point(137, 98);
+            this.label1.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label1.Location = new System.Drawing.Point(226, 113);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(217, 16);
+            this.label1.Size = new System.Drawing.Size(217, 19);
             this.label1.TabIndex = 5;
             this.label1.Text = "Дифференциальное уравнение\r\n";
             // 
             // SolveButton
             // 
-            this.SolveButton.Location = new System.Drawing.Point(685, 306);
+            this.SolveButton.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.SolveButton.Location = new System.Drawing.Point(809, 371);
             this.SolveButton.Name = "SolveButton";
-            this.SolveButton.Size = new System.Drawing.Size(75, 23);
+            this.SolveButton.Size = new System.Drawing.Size(88, 34);
             this.SolveButton.TabIndex = 9;
             this.SolveButton.Text = "Решить";
             this.SolveButton.UseVisualStyleBackColor = true;
             this.SolveButton.Click += new System.EventHandler(this.Solve_Click);
             // 
-            // groupBox2
+            // ParametrGroupBox
             // 
-            this.groupBox2.Controls.Add(this.N_numUpDown);
-            this.groupBox2.Controls.Add(this.eps_textbox);
-            this.groupBox2.Controls.Add(this.y0_textbox);
-            this.groupBox2.Controls.Add(this.b_textbox);
-            this.groupBox2.Controls.Add(this.x0_textbox);
-            this.groupBox2.Controls.Add(this.a_textbox);
-            this.groupBox2.Controls.Add(this.label7);
-            this.groupBox2.Controls.Add(this.label6);
-            this.groupBox2.Controls.Add(this.label5);
-            this.groupBox2.Controls.Add(this.label4);
-            this.groupBox2.Controls.Add(this.label3);
-            this.groupBox2.Controls.Add(this.label2);
-            this.groupBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.groupBox2.Location = new System.Drawing.Point(131, 193);
-            this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(329, 136);
-            this.groupBox2.TabIndex = 8;
-            this.groupBox2.TabStop = false;
-            this.groupBox2.Text = "Параметры";
+            this.ParametrGroupBox.Controls.Add(this.N_numUpDown);
+            this.ParametrGroupBox.Controls.Add(this.eps_textbox);
+            this.ParametrGroupBox.Controls.Add(this.y0_textbox);
+            this.ParametrGroupBox.Controls.Add(this.b_textbox);
+            this.ParametrGroupBox.Controls.Add(this.x0_textbox);
+            this.ParametrGroupBox.Controls.Add(this.a_textbox);
+            this.ParametrGroupBox.Controls.Add(this.label9);
+            this.ParametrGroupBox.Controls.Add(this.label8);
+            this.ParametrGroupBox.Controls.Add(this.label7);
+            this.ParametrGroupBox.Controls.Add(this.label6);
+            this.ParametrGroupBox.Controls.Add(this.label5);
+            this.ParametrGroupBox.Controls.Add(this.label4);
+            this.ParametrGroupBox.Controls.Add(this.label3);
+            this.ParametrGroupBox.Controls.Add(this.label2);
+            this.ParametrGroupBox.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.ParametrGroupBox.Location = new System.Drawing.Point(194, 203);
+            this.ParametrGroupBox.Name = "ParametrGroupBox";
+            this.ParametrGroupBox.Size = new System.Drawing.Size(330, 170);
+            this.ParametrGroupBox.TabIndex = 8;
+            this.ParametrGroupBox.TabStop = false;
+            this.ParametrGroupBox.Text = "Параметры";
             // 
             // N_numUpDown
             // 
-            this.N_numUpDown.Location = new System.Drawing.Point(37, 106);
+            this.N_numUpDown.Location = new System.Drawing.Point(38, 113);
             this.N_numUpDown.Name = "N_numUpDown";
-            this.N_numUpDown.Size = new System.Drawing.Size(83, 22);
+            this.N_numUpDown.Size = new System.Drawing.Size(83, 26);
             this.N_numUpDown.TabIndex = 2;
             // 
             // eps_textbox
             // 
-            this.eps_textbox.Location = new System.Drawing.Point(212, 106);
+            this.eps_textbox.Location = new System.Drawing.Point(247, 100);
             this.eps_textbox.Name = "eps_textbox";
-            this.eps_textbox.Size = new System.Drawing.Size(85, 22);
+            this.eps_textbox.Size = new System.Drawing.Size(51, 26);
             this.eps_textbox.TabIndex = 1;
             this.eps_textbox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.Number);
             // 
             // y0_textbox
             // 
-            this.y0_textbox.Location = new System.Drawing.Point(212, 65);
+            this.y0_textbox.Location = new System.Drawing.Point(213, 72);
             this.y0_textbox.Name = "y0_textbox";
-            this.y0_textbox.Size = new System.Drawing.Size(85, 22);
+            this.y0_textbox.Size = new System.Drawing.Size(85, 26);
             this.y0_textbox.TabIndex = 1;
             this.y0_textbox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.Number);
             // 
             // b_textbox
             // 
-            this.b_textbox.Location = new System.Drawing.Point(212, 27);
+            this.b_textbox.Location = new System.Drawing.Point(213, 34);
             this.b_textbox.Name = "b_textbox";
-            this.b_textbox.Size = new System.Drawing.Size(85, 22);
+            this.b_textbox.Size = new System.Drawing.Size(85, 26);
             this.b_textbox.TabIndex = 1;
             this.b_textbox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.Number);
             // 
             // x0_textbox
             // 
-            this.x0_textbox.Location = new System.Drawing.Point(35, 66);
+            this.x0_textbox.Location = new System.Drawing.Point(36, 73);
             this.x0_textbox.Name = "x0_textbox";
-            this.x0_textbox.Size = new System.Drawing.Size(85, 22);
+            this.x0_textbox.Size = new System.Drawing.Size(85, 26);
             this.x0_textbox.TabIndex = 1;
             this.x0_textbox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.Number);
             // 
             // a_textbox
             // 
-            this.a_textbox.Location = new System.Drawing.Point(35, 29);
+            this.a_textbox.Location = new System.Drawing.Point(36, 36);
             this.a_textbox.Name = "a_textbox";
-            this.a_textbox.Size = new System.Drawing.Size(85, 22);
+            this.a_textbox.Size = new System.Drawing.Size(85, 26);
             this.a_textbox.TabIndex = 1;
             this.a_textbox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.Number);
+            // 
+            // label9
+            // 
+            this.label9.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.label9.AutoSize = true;
+            this.label9.BackColor = System.Drawing.Color.Transparent;
+            this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label9.ForeColor = System.Drawing.Color.Black;
+            this.label9.Location = new System.Drawing.Point(227, 100);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(14, 20);
+            this.label9.TabIndex = 0;
+            this.label9.Text = "-";
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label8.Location = new System.Drawing.Point(210, 114);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(22, 16);
+            this.label8.TabIndex = 0;
+            this.label8.Text = "10";
             // 
             // label7
             // 
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label7.Location = new System.Drawing.Point(182, 107);
+            this.label7.Location = new System.Drawing.Point(183, 114);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(24, 16);
             this.label7.TabIndex = 0;
@@ -159,7 +187,7 @@
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label6.Location = new System.Drawing.Point(182, 68);
+            this.label6.Location = new System.Drawing.Point(183, 75);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(29, 16);
             this.label6.TabIndex = 0;
@@ -169,7 +197,7 @@
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label5.Location = new System.Drawing.Point(182, 28);
+            this.label5.Location = new System.Drawing.Point(183, 35);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(23, 16);
             this.label5.TabIndex = 0;
@@ -179,7 +207,7 @@
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label4.Location = new System.Drawing.Point(6, 108);
+            this.label4.Location = new System.Drawing.Point(7, 115);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(25, 16);
             this.label4.TabIndex = 0;
@@ -189,7 +217,7 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label3.Location = new System.Drawing.Point(6, 69);
+            this.label3.Location = new System.Drawing.Point(7, 76);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(28, 16);
             this.label3.TabIndex = 0;
@@ -199,74 +227,74 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label2.Location = new System.Drawing.Point(6, 29);
+            this.label2.Location = new System.Drawing.Point(7, 36);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(23, 16);
             this.label2.TabIndex = 0;
             this.label2.Text = "a=";
             // 
-            // groupBox1
+            // MethodGroupBox
             // 
-            this.groupBox1.Controls.Add(this.checkBox6);
-            this.groupBox1.Controls.Add(this.checkBox5);
-            this.groupBox1.Controls.Add(this.checkBox4);
-            this.groupBox1.Controls.Add(this.checkBox3);
-            this.groupBox1.Controls.Add(this.ChordBox);
-            this.groupBox1.Controls.Add(this.EulerBox);
-            this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.groupBox1.Location = new System.Drawing.Point(526, 102);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(234, 184);
-            this.groupBox1.TabIndex = 6;
-            this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Методы";
+            this.MethodGroupBox.Controls.Add(this.AdamsBox);
+            this.MethodGroupBox.Controls.Add(this.MilnaBox);
+            this.MethodGroupBox.Controls.Add(this.Runge_kuttaBox);
+            this.MethodGroupBox.Controls.Add(this.Euler_recalBox);
+            this.MethodGroupBox.Controls.Add(this.ChordBox);
+            this.MethodGroupBox.Controls.Add(this.EulerBox);
+            this.MethodGroupBox.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.MethodGroupBox.Location = new System.Drawing.Point(663, 113);
+            this.MethodGroupBox.Name = "MethodGroupBox";
+            this.MethodGroupBox.Size = new System.Drawing.Size(234, 184);
+            this.MethodGroupBox.TabIndex = 6;
+            this.MethodGroupBox.TabStop = false;
+            this.MethodGroupBox.Text = "Методы";
             // 
-            // checkBox6
+            // AdamsBox
             // 
-            this.checkBox6.AutoSize = true;
-            this.checkBox6.Location = new System.Drawing.Point(19, 141);
-            this.checkBox6.Name = "checkBox6";
-            this.checkBox6.Size = new System.Drawing.Size(76, 20);
-            this.checkBox6.TabIndex = 0;
-            this.checkBox6.Text = "Адемса";
-            this.checkBox6.UseVisualStyleBackColor = true;
+            this.AdamsBox.AutoSize = true;
+            this.AdamsBox.Location = new System.Drawing.Point(19, 141);
+            this.AdamsBox.Name = "AdamsBox";
+            this.AdamsBox.Size = new System.Drawing.Size(78, 23);
+            this.AdamsBox.TabIndex = 0;
+            this.AdamsBox.Text = "Адемса";
+            this.AdamsBox.UseVisualStyleBackColor = true;
             // 
-            // checkBox5
+            // MilnaBox
             // 
-            this.checkBox5.AutoSize = true;
-            this.checkBox5.Location = new System.Drawing.Point(19, 118);
-            this.checkBox5.Name = "checkBox5";
-            this.checkBox5.Size = new System.Drawing.Size(70, 20);
-            this.checkBox5.TabIndex = 0;
-            this.checkBox5.Text = "Милна";
-            this.checkBox5.UseVisualStyleBackColor = true;
+            this.MilnaBox.AutoSize = true;
+            this.MilnaBox.Location = new System.Drawing.Point(19, 118);
+            this.MilnaBox.Name = "MilnaBox";
+            this.MilnaBox.Size = new System.Drawing.Size(75, 23);
+            this.MilnaBox.TabIndex = 0;
+            this.MilnaBox.Text = "Милна";
+            this.MilnaBox.UseVisualStyleBackColor = true;
             // 
-            // checkBox4
+            // Runge_kuttaBox
             // 
-            this.checkBox4.AutoSize = true;
-            this.checkBox4.Location = new System.Drawing.Point(19, 95);
-            this.checkBox4.Name = "checkBox4";
-            this.checkBox4.Size = new System.Drawing.Size(106, 20);
-            this.checkBox4.TabIndex = 0;
-            this.checkBox4.Text = "Рунге кутта";
-            this.checkBox4.UseVisualStyleBackColor = true;
+            this.Runge_kuttaBox.AutoSize = true;
+            this.Runge_kuttaBox.Location = new System.Drawing.Point(19, 95);
+            this.Runge_kuttaBox.Name = "Runge_kuttaBox";
+            this.Runge_kuttaBox.Size = new System.Drawing.Size(105, 23);
+            this.Runge_kuttaBox.TabIndex = 0;
+            this.Runge_kuttaBox.Text = "Рунге кутта";
+            this.Runge_kuttaBox.UseVisualStyleBackColor = true;
             // 
-            // checkBox3
+            // Euler_recalBox
             // 
-            this.checkBox3.AutoSize = true;
-            this.checkBox3.Location = new System.Drawing.Point(19, 72);
-            this.checkBox3.Name = "checkBox3";
-            this.checkBox3.Size = new System.Drawing.Size(169, 20);
-            this.checkBox3.TabIndex = 0;
-            this.checkBox3.Text = "Эйлера с пересчётом";
-            this.checkBox3.UseVisualStyleBackColor = true;
+            this.Euler_recalBox.AutoSize = true;
+            this.Euler_recalBox.Location = new System.Drawing.Point(19, 72);
+            this.Euler_recalBox.Name = "Euler_recalBox";
+            this.Euler_recalBox.Size = new System.Drawing.Size(171, 23);
+            this.Euler_recalBox.TabIndex = 0;
+            this.Euler_recalBox.Text = "Эйлера с пересчётом";
+            this.Euler_recalBox.UseVisualStyleBackColor = true;
             // 
             // ChordBox
             // 
             this.ChordBox.AutoSize = true;
             this.ChordBox.Location = new System.Drawing.Point(19, 49);
             this.ChordBox.Name = "ChordBox";
-            this.ChordBox.Size = new System.Drawing.Size(59, 20);
+            this.ChordBox.Size = new System.Drawing.Size(62, 23);
             this.ChordBox.TabIndex = 0;
             this.ChordBox.Text = "Хорд";
             this.ChordBox.UseVisualStyleBackColor = true;
@@ -276,34 +304,35 @@
             this.EulerBox.AutoSize = true;
             this.EulerBox.Location = new System.Drawing.Point(19, 26);
             this.EulerBox.Name = "EulerBox";
-            this.EulerBox.Size = new System.Drawing.Size(77, 20);
+            this.EulerBox.Size = new System.Drawing.Size(78, 23);
             this.EulerBox.TabIndex = 0;
             this.EulerBox.Text = "Эйлера";
             this.EulerBox.UseVisualStyleBackColor = true;
             // 
             // dif_textbox
             // 
-            this.dif_textbox.Location = new System.Drawing.Point(131, 117);
+            this.dif_textbox.Location = new System.Drawing.Point(194, 139);
             this.dif_textbox.Name = "dif_textbox";
-            this.dif_textbox.Size = new System.Drawing.Size(234, 20);
+            this.dif_textbox.Size = new System.Drawing.Size(330, 20);
             this.dif_textbox.TabIndex = 7;
             // 
             // InputControl
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.Controls.Add(this.label1);
             this.Controls.Add(this.SolveButton);
-            this.Controls.Add(this.groupBox2);
-            this.Controls.Add(this.groupBox1);
+            this.Controls.Add(this.ParametrGroupBox);
+            this.Controls.Add(this.MethodGroupBox);
             this.Controls.Add(this.dif_textbox);
             this.Name = "InputControl";
-            this.Size = new System.Drawing.Size(1058, 512);
-            this.groupBox2.ResumeLayout(false);
-            this.groupBox2.PerformLayout();
+            this.Size = new System.Drawing.Size(1048, 502);
+            this.ParametrGroupBox.ResumeLayout(false);
+            this.ParametrGroupBox.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.N_numUpDown)).EndInit();
-            this.groupBox1.ResumeLayout(false);
-            this.groupBox1.PerformLayout();
+            this.MethodGroupBox.ResumeLayout(false);
+            this.MethodGroupBox.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -313,9 +342,8 @@
 
         protected internal System.Windows.Forms.Label label1;
         protected internal System.Windows.Forms.Button SolveButton;
-        protected internal System.Windows.Forms.GroupBox groupBox2;
+        protected internal System.Windows.Forms.GroupBox ParametrGroupBox;
         private System.Windows.Forms.NumericUpDown N_numUpDown;
-        private System.Windows.Forms.TextBox eps_textbox;
         private System.Windows.Forms.TextBox y0_textbox;
         private System.Windows.Forms.TextBox b_textbox;
         private System.Windows.Forms.TextBox x0_textbox;
@@ -326,13 +354,16 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
-        protected internal System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.CheckBox checkBox6;
-        private System.Windows.Forms.CheckBox checkBox5;
-        private System.Windows.Forms.CheckBox checkBox4;
-        private System.Windows.Forms.CheckBox checkBox3;
+        protected internal System.Windows.Forms.GroupBox MethodGroupBox;
+        private System.Windows.Forms.CheckBox AdamsBox;
+        private System.Windows.Forms.CheckBox MilnaBox;
+        private System.Windows.Forms.CheckBox Runge_kuttaBox;
+        private System.Windows.Forms.CheckBox Euler_recalBox;
         private System.Windows.Forms.CheckBox ChordBox;
         private System.Windows.Forms.CheckBox EulerBox;
         protected internal System.Windows.Forms.TextBox dif_textbox;
+        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.Label label8;
+        public System.Windows.Forms.TextBox eps_textbox;
     }
 }
