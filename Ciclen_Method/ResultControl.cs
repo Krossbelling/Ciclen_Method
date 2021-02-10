@@ -12,20 +12,24 @@ namespace Ciclen_Method
 {
     public partial class ResultControl : UserControl
     {
-        Form formtoopen;
-        public ResultControl(Form1 form)
+        
+        public ResultControl()
         {
             InitializeComponent();
-            formtoopen = form;
+            
 
         }
 
         private void BackButton_Click(object sender, EventArgs e)
         {
-            Controls.Clear();            
-            
-            
+            // пытаемся получить ссылку на интерфейс навигатора,
+            // который должна реализовать форма Form1, на которой находится сейчас экземпляр UserControl1
+            INavigator navigator = ParentForm as INavigator;
+            // если это не так, выходим
+            if (navigator == null) return;
+            // вызываем метод, который создаст и разместит экземпляр UserControl2 на панели Panel1 формы Form1
+            navigator.CreateAndPlaceToPage(typeof(InputControl));
+
         }
-        
     }
 }
