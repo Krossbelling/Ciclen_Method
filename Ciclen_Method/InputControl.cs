@@ -14,12 +14,12 @@ namespace Ciclen_Method
     {
         public static double a;
         public static double b;
-        public static double x0;
+        //public static double x0;
+        //public static double y0;
         public static int N;
-        public static double y0;
         public static int eps;
         static double f;
-        static string uravn = "";
+        public static string uravn = "";
         public static double[] x;
         public static double[] y;
         static bool Eulerbox;
@@ -28,16 +28,18 @@ namespace Ciclen_Method
         static bool Runge_kuttabox;
         static bool Milnabox;
         static bool Adamsbox;
-
+        double x0;
+        double y0;
 
         public InputControl()
         {
             InitializeComponent();
+
             a_textbox.Text = a.ToString();
             b_textbox.Text = b.ToString();
             x0_textbox.Text = x0.ToString();
-            N_numUpDown.Text = N.ToString();
             y0_textbox.Text = y0.ToString();
+            N_numUpDown.Text = N.ToString();
             eps_textbox.Text = eps.ToString();
             if (uravn != "")
             {
@@ -81,11 +83,14 @@ namespace Ciclen_Method
                 ParserFunction.addFunction("abs", new AbsFunction());
                 ParserFunction.addFunction("sqrt", new SqrtFunction());
 
+                ParserFunction.addFunction("x", new XFunction());
+                ParserFunction.addFunction("y", new YFunction());
+
                 a = double.Parse(a_textbox.Text);
                 b = double.Parse(b_textbox.Text);
-                x0 = double.Parse(x0_textbox.Text);
+                // x0 = double.Parse(x0_textbox.Text);
+                // y0 = double.Parse(y0_textbox.Text);
                 N = int.Parse(N_numUpDown.Text);
-                y0 = double.Parse(y0_textbox.Text);
                 eps = int.Parse(eps_textbox.Text);
                 uravn = dif_textbox.Text;
                 x = new double[N];
@@ -202,8 +207,14 @@ namespace Ciclen_Method
             y[0] = b;
             for (int i = 1; i < N; i++)
             {
-               x[i] = x[0] + i * h;
-               y[i] = y[i - 1] + h * F(x[i - 1], y[i - 1]);
+                x[i] = x[0] + i * h;
+                // y[i] = y[i - 1] + h * F(x[i - 1], y[i - 1]); 
+                x0 = x[i - 1];
+                y0 = y[i - 1];
+
+                f = Parser.process(x0, y0, uravn);
+                y[i] = y[i - 1] + h * f;
+
 
             }
         }
@@ -247,13 +258,12 @@ namespace Ciclen_Method
             internal char Action { get; set; }
         }
 
-        public static double process(string data)
-        {
-            // Get rid of spaces and check parenthesis
+        public static double process(double x0, double y0, string data)
+        {            
             string expression = preprocess(data);
             int from = 0;
 
-            return loadAndCalculate(data, ref from, END_LINE);
+            return loadAndCalculate(x0,y0, data, ref from, END_LINE);
         }
 
         static string preprocess(string data)
@@ -292,7 +302,7 @@ namespace Ciclen_Method
             return result.ToString();
         }
 
-        public static double loadAndCalculate(string data, ref int from, char to = END_LINE)
+        public static double loadAndCalculate(double x0, double y0, string data,  ref int from, char to = END_LINE)
         {
             if (from >= data.Length || data[from] == to)
             {
@@ -303,22 +313,18 @@ namespace Ciclen_Method
             StringBuilder item = new StringBuilder();
 
             do
-            { // Main processing cycle of the first part.
+            { 
                 char ch = data[from++];
                 if (stillCollecting(item.ToString(), ch, to))
-                { // The char still belongs to the previous operand.
+                { 
                     item.Append(ch);
                     if (from < data.Length && data[from] != to)
                     {
                         continue;
                     }
-                }
-
-                // We are done getting the next token. The getValue() call below may
-                // recursively call loadAndCalculate(). This will happen if extracted
-                // item is a function or if the next item is starting with a START_ARG '('.
+                }                
                 ParserFunction func = new ParserFunction(data, ref from, item.ToString(), ch);
-                double value = func.getValue(data, ref from);
+                double value = func.getValue(x0, y0, data, ref from);
 
                 char action = validAction(ch) ? ch
                                               : updateAction(data, ref from, ch, to);
@@ -330,7 +336,7 @@ namespace Ciclen_Method
 
             if (from < data.Length &&
                (data[from] == END_ARG || data[from] == to))
-            { // This happens when called recursively: move one char forward.
+            { 
                 from++;
             }
 
@@ -342,7 +348,6 @@ namespace Ciclen_Method
 
         static bool stillCollecting(string item, char ch, char to)
         {
-            // Stop collecting if either got END_ARG ')' or to char, e.g. ','.
             char stopCollecting = (to == END_ARG || to == END_LINE) ?
                                    END_ARG : to;
             return (item.Length == 0 && (ch == '-' || ch == END_ARG)) ||
@@ -364,7 +369,7 @@ namespace Ciclen_Method
             int index = from;
             char res = ch;
             while (!validAction(res) && index < item.Length)
-            { // Look for the next character in string until a valid action is found.
+            { 
                 res = item[index++];
             }
 
@@ -374,9 +379,6 @@ namespace Ciclen_Method
             return res;
         }
 
-        // From outside this function is called with mergeOneOnly = false.
-        // It also calls itself recursively with mergeOneOnly = true, meaning
-        // that it will return after only one merge.
         static double merge(Cell current, ref int index, List<Cell> listToMerge,
                      bool mergeOneOnly = false)
         {
@@ -385,10 +387,8 @@ namespace Ciclen_Method
                 Cell next = listToMerge[index++];
 
                 while (!canMergeCells(current, next))
-                { // If we cannot merge cells yet, go to the next cell and merge
-                  // next cells first. E.g. if we have 1+2*3, we first merge next
-                  // cells, i.e. 2*3, getting 6, and then we can merge 1+6.
-                    merge(next, ref index, listToMerge, true /* mergeOneOnly */);
+                { 
+                    merge(next, ref index, listToMerge, true );
                 }
                 mergeCells(current, next);
                 if (mergeOneOnly)
@@ -451,25 +451,23 @@ namespace Ciclen_Method
         public ParserFunction()
         {
             m_impl = this;
+
         }
 
-        // A "virtual" Constructor
         internal ParserFunction(string data, ref int from, string item, char ch)
         {
+
             if (item.Length == 0 && ch == Parser.START_ARG)
             {
-                // There is no function, just an expression in parentheses
                 m_impl = s_idFunction;
                 return;
             }
 
             if (m_functions.TryGetValue(item, out m_impl))
             {
-                // Function exists and is registered (e.g. pi, exp, etc.)
                 return;
             }
 
-            // Function not found, will try to parse this as a number.
             s_strtodFunction.Item = item;
             m_impl = s_strtodFunction;
         }
@@ -479,14 +477,13 @@ namespace Ciclen_Method
             m_functions[name] = function;
         }
 
-        public double getValue(string data, ref int from)
+        public double getValue(double x0, double y0, string data, ref int from)
         {
-            return m_impl.evaluate(data, ref from);
+            return m_impl.evaluate(x0,y0, data, ref from);
         }
 
-        protected virtual double evaluate(string data, ref int from)
+        protected virtual double evaluate(double x0, double y0, string data, ref int from)
         {
-            // The real implementation will be in the derived classes.
             return 0;
         }
 
@@ -499,7 +496,7 @@ namespace Ciclen_Method
 
     class StrtodFunction : ParserFunction
     {
-        protected override double evaluate(string data, ref int from)
+        protected override double evaluate(double x0, double y0, string data, ref int from)
         {
             double num;
             if (!Double.TryParse(Item, out num))
@@ -513,59 +510,73 @@ namespace Ciclen_Method
 
     class IdentityFunction : ParserFunction
     {
-        protected override double evaluate(string data, ref int from)
+        protected override double evaluate(double x0, double y0, string data, ref int from)
         {
-            return Parser.loadAndCalculate(data, ref from, Parser.END_ARG);
+            return Parser.loadAndCalculate(x0,y0, data, ref from, Parser.END_ARG);
         }
     }
 
     class PiFunction : ParserFunction
     {
-        protected override double evaluate(string data, ref int from)
+        protected override double evaluate(double x0, double y0, string data, ref int from)
         {
             return 3.141592653589793;
         }
     }
     class ExpFunction : ParserFunction
     {
-        protected override double evaluate(string data, ref int from)
+        protected override double evaluate(double x0, double y0, string data, ref int from)
         {
-            double arg = Parser.loadAndCalculate(data, ref from, Parser.END_ARG);
+            double arg = Parser.loadAndCalculate(x0,y0, data, ref from, Parser.END_ARG);
             return Math.Exp(arg);
         }
     }
     class PowFunction : ParserFunction
     {
-        protected override double evaluate(string data, ref int from)
+        protected override double evaluate(double x0, double y0, string data, ref int from)
         {
-            double arg1 = Parser.loadAndCalculate(data, ref from, ',');
-            double arg2 = Parser.loadAndCalculate(data, ref from, Parser.END_ARG);
+            double arg1 = Parser.loadAndCalculate(x0,y0, data, ref from, ',');
+            double arg2 = Parser.loadAndCalculate(x0,y0, data, ref from, Parser.END_ARG);
 
             return Math.Pow(arg1, arg2);
         }
     }
     class SinFunction : ParserFunction
     {
-        protected override double evaluate(string data, ref int from)
+        protected override double evaluate(double x0, double y0, string data, ref int from)
         {
-            double arg = Parser.loadAndCalculate(data, ref from, Parser.END_ARG);
+            double arg = Parser.loadAndCalculate(x0,y0, data, ref from, Parser.END_ARG);
             return Math.Sin(arg);
         }
     }
     class SqrtFunction : ParserFunction
     {
-        protected override double evaluate(string data, ref int from)
+        protected override double evaluate(double x0, double y0, string data, ref int from)
         {
-            double arg = Parser.loadAndCalculate(data, ref from, Parser.END_ARG);
+            double arg = Parser.loadAndCalculate(x0,y0, data, ref from, Parser.END_ARG);
             return Math.Sqrt(arg);
         }
     }
     class AbsFunction : ParserFunction
     {
-        protected override double evaluate(string data, ref int from)
+        protected override double evaluate(double x0, double y0, string data, ref int from)
         {
-            double arg = Parser.loadAndCalculate(data, ref from, Parser.END_ARG);
+            double arg = Parser.loadAndCalculate(x0,y0, data, ref from, Parser.END_ARG);
             return Math.Abs(arg);
+        }
+    }
+    class XFunction : ParserFunction 
+    {
+        protected override double evaluate(double x0, double y0, string data, ref int from)
+        {
+            return x0;
+        }
+    }
+    class YFunction : ParserFunction
+    {
+        protected override double evaluate(double x0, double y0, string data, ref int from)
+        {
+            return y0;
         }
     }
 }
