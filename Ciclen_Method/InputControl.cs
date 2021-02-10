@@ -270,7 +270,7 @@ namespace Ciclen_Method
         {
             if (string.IsNullOrEmpty(data))
             {
-                throw new ArgumentException("Loaded empty data");
+                throw new ArgumentException("Загруженны пустые данные");
             }
 
             int parentheses = 0;
@@ -296,7 +296,7 @@ namespace Ciclen_Method
 
             if (parentheses != 0)
             {
-                throw new ArgumentException("Uneven parenthesis");
+                throw new ArgumentException("Неравновномерные скобки");
             }
 
             return result.ToString();
@@ -306,7 +306,7 @@ namespace Ciclen_Method
         {
             if (from >= data.Length || data[from] == to)
             {
-                throw new ArgumentException("Loaded invalid data: " + data);
+                throw new ArgumentException("Загруженные неверные данные: " + data);
             }
 
             List<Cell> listToMerge = new List<Cell>(16);
@@ -413,7 +413,7 @@ namespace Ciclen_Method
                 case '/':
                     if (rightCell.Value == 0)
                     {
-                        throw new ArgumentException("Division by zero");
+                        throw new ArgumentException("Деление на ноль");
                     }
                     leftCell.Value /= rightCell.Value;
                     break;
@@ -451,7 +451,6 @@ namespace Ciclen_Method
         public ParserFunction()
         {
             m_impl = this;
-
         }
 
         internal ParserFunction(string data, ref int from, string item, char ch)
