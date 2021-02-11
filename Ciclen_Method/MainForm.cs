@@ -281,8 +281,12 @@ namespace Ciclen_Method
 
         private void BackButton_Click(object sender, EventArgs e)
         {
-            currentChildForm.Close();
-            Refresh();
+            if (currentChildForm != null)
+            {
+                currentChildForm.Close();
+                Refresh();
+            }
+                
         }
     }
 
