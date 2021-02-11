@@ -62,7 +62,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label1.Location = new System.Drawing.Point(455, 74);
+            this.label1.Location = new System.Drawing.Point(446, 73);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(252, 20);
             this.label1.TabIndex = 5;
@@ -316,9 +316,10 @@
             // 
             // dif_textbox
             // 
+            this.dif_textbox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.dif_textbox.Location = new System.Drawing.Point(400, 96);
             this.dif_textbox.Name = "dif_textbox";
-            this.dif_textbox.Size = new System.Drawing.Size(330, 20);
+            this.dif_textbox.Size = new System.Drawing.Size(330, 26);
             this.dif_textbox.TabIndex = 7;
             // 
             // InputControl
