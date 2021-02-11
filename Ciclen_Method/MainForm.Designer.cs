@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
-            this.Panel = new System.Windows.Forms.Panel();
+            this.PanelDesktop = new System.Windows.Forms.Panel();
             this.label10 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.SolveButton = new System.Windows.Forms.Button();
@@ -59,25 +59,25 @@
             this.panelTitleBar = new System.Windows.Forms.Panel();
             this.Out = new System.Windows.Forms.Button();
             this.Title_label = new System.Windows.Forms.Label();
-            this.Panel.SuspendLayout();
+            this.PanelDesktop.SuspendLayout();
             this.ParametrGroupBox.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.N_numUpDown)).BeginInit();
             this.MethodGroupBox.SuspendLayout();
             this.panelTitleBar.SuspendLayout();
             this.SuspendLayout();
             // 
-            // Panel
+            // PanelDesktop
             // 
-            this.Panel.Controls.Add(this.label10);
-            this.Panel.Controls.Add(this.label1);
-            this.Panel.Controls.Add(this.SolveButton);
-            this.Panel.Controls.Add(this.ParametrGroupBox);
-            this.Panel.Controls.Add(this.MethodGroupBox);
-            this.Panel.Controls.Add(this.dif_textbox);
-            this.Panel.Location = new System.Drawing.Point(0, 57);
-            this.Panel.Name = "Panel";
-            this.Panel.Size = new System.Drawing.Size(1126, 548);
-            this.Panel.TabIndex = 5;
+            this.PanelDesktop.Controls.Add(this.label10);
+            this.PanelDesktop.Controls.Add(this.label1);
+            this.PanelDesktop.Controls.Add(this.SolveButton);
+            this.PanelDesktop.Controls.Add(this.ParametrGroupBox);
+            this.PanelDesktop.Controls.Add(this.MethodGroupBox);
+            this.PanelDesktop.Controls.Add(this.dif_textbox);
+            this.PanelDesktop.Location = new System.Drawing.Point(0, 57);
+            this.PanelDesktop.Name = "PanelDesktop";
+            this.PanelDesktop.Size = new System.Drawing.Size(1126, 548);
+            this.PanelDesktop.TabIndex = 5;
             // 
             // label10
             // 
@@ -405,13 +405,14 @@
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.ClientSize = new System.Drawing.Size(1131, 617);
             this.Controls.Add(this.panelTitleBar);
-            this.Controls.Add(this.Panel);
+            this.Controls.Add(this.PanelDesktop);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "MainForm";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Решение дифференциального уравнения";
-            this.Panel.ResumeLayout(false);
-            this.Panel.PerformLayout();
+            this.PanelDesktop.ResumeLayout(false);
+            this.PanelDesktop.PerformLayout();
             this.ParametrGroupBox.ResumeLayout(false);
             this.ParametrGroupBox.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.N_numUpDown)).EndInit();
@@ -425,7 +426,7 @@
 
         #endregion
 
-        protected internal System.Windows.Forms.Panel Panel;
+        protected internal System.Windows.Forms.Panel PanelDesktop;
         private System.Windows.Forms.Panel panelTitleBar;
         private System.Windows.Forms.Label Title_label;
         private System.Windows.Forms.Button Out;

@@ -17,7 +17,7 @@ namespace Ciclen_Method
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new ResultMainForm());
+            Application.Run(new MainForm());
         }
     }
 }

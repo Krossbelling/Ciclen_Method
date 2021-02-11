@@ -10,6 +10,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using FontAwesome.Sharp;
+using Ciclen_Method.Forms;
 
 namespace Ciclen_Method
 {
@@ -18,6 +19,7 @@ namespace Ciclen_Method
     {
         private Button currentBtn;
         private Panel panel;
+        private System.Windows.Forms.Form currentChildForm;
         // закруглённый button https://www.cyberforum.ru/post9872749.html
         public static double a;
         public static double b;        
@@ -41,6 +43,7 @@ namespace Ciclen_Method
             
             this.Text = string.Empty;
             this.ControlBox = false;
+            this.DoubleBuffered = true;
             this.MaximizedBounds = Screen.FromHandle(this.Handle).WorkingArea;
 
             a_textbox.Text = a.ToString();
@@ -85,9 +88,24 @@ namespace Ciclen_Method
         {
             ReleaseCapture();
             SendMessage(this.Handle, 0x112, 0xf012, 0);
-        }        
+        }
+        private void OpenChildForm(System.Windows.Forms.Form childForm)
+        {
+            if (currentChildForm != null)
+            {
+                currentChildForm.Close();
+            }
+            currentChildForm = childForm;
+            childForm.TopLevel = false;
+            childForm.FormBorderStyle = FormBorderStyle.None;
+            childForm.Dock = DockStyle.Fill;
+            PanelDesktop.Controls.Add(childForm);
+            PanelDesktop.Tag = childForm;
+            childForm.BringToFront();
+            childForm.Show();
+        }
 
-        
+
 
         private void Out_Click(object sender, EventArgs e)
         {
@@ -204,9 +222,9 @@ namespace Ciclen_Method
 
                 if (!AdamsBox.Checked)
                     Adamsbox = false;
-                               
 
-               
+
+                OpenChildForm(new ResultMainForm());
 
             }
             catch (Exception exept)

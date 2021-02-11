@@ -15,12 +15,30 @@ namespace Ciclen_Method.Forms
     {
         private IconButton currentBtn;
         private Panel leftBorderBtn;
+        private System.Windows.Forms.Form currentChildForm;
         public ResultMainForm()
         {
             InitializeComponent();
             leftBorderBtn = new Panel();
             leftBorderBtn.Size = new Size(1126, 47);
             PanelMenu.Controls.Add(leftBorderBtn);
+
+
+        }
+        private void OpenChildForm(System.Windows.Forms.Form childForm)
+        {
+            if (currentChildForm != null)
+            {
+                currentChildForm.Close();
+            }
+            currentChildForm = childForm;
+            childForm.TopLevel = false;
+            childForm.FormBorderStyle = FormBorderStyle.None;
+            childForm.Dock = DockStyle.Fill;
+            panelBack.Controls.Add(childForm);
+            panelBack.Tag = childForm;
+            childForm.BringToFront();
+            childForm.Show();
         }
         private struct RGBColors
         {
@@ -92,6 +110,11 @@ namespace Ciclen_Method.Forms
         private void iconButton6_Click(object sender, EventArgs e)
         {
             ActivateButton(sender, RGBColors.color6);
+        }
+
+        private void BackButton_Click(object sender, EventArgs e)
+        {
+            OpenChildForm(new MainForm());
         }
     }
 }
