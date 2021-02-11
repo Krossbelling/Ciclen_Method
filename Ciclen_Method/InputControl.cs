@@ -12,6 +12,7 @@ namespace Ciclen_Method
 {    
     public partial class InputControl : UserControl
     {
+        // закруглённый button https://www.cyberforum.ru/post9872749.html
         public static double a;
         public static double b;
         //public static double x0;
@@ -76,10 +77,10 @@ namespace Ciclen_Method
         {
             try
             {
+                ParserFunction.addFunction("sin", new SinFunction());
                 ParserFunction.addFunction("pi", new PiFunction());
                 ParserFunction.addFunction("exp", new ExpFunction());
                 ParserFunction.addFunction("pow", new PowFunction());
-                ParserFunction.addFunction("sin", new SinFunction());
                 ParserFunction.addFunction("abs", new AbsFunction());
                 ParserFunction.addFunction("sqrt", new SqrtFunction());
 

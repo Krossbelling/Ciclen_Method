@@ -53,6 +53,7 @@
             this.ChordBox = new System.Windows.Forms.CheckBox();
             this.EulerBox = new System.Windows.Forms.CheckBox();
             this.dif_textbox = new System.Windows.Forms.TextBox();
+            this.label10 = new System.Windows.Forms.Label();
             this.ParametrGroupBox.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.N_numUpDown)).BeginInit();
             this.MethodGroupBox.SuspendLayout();
@@ -61,10 +62,10 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label1.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label1.Location = new System.Drawing.Point(446, 73);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(252, 20);
+            this.label1.Size = new System.Drawing.Size(254, 21);
             this.label1.TabIndex = 5;
             this.label1.Text = "Дифференциальное уравнение\r\n";
             // 
@@ -73,7 +74,7 @@
             this.SolveButton.BackColor = System.Drawing.Color.MidnightBlue;
             this.SolveButton.FlatAppearance.BorderSize = 0;
             this.SolveButton.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.SolveButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.SolveButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.SolveButton.ForeColor = System.Drawing.Color.GhostWhite;
             this.SolveButton.Location = new System.Drawing.Point(527, 365);
             this.SolveButton.Name = "SolveButton";
@@ -100,7 +101,7 @@
             this.ParametrGroupBox.Controls.Add(this.label4);
             this.ParametrGroupBox.Controls.Add(this.label3);
             this.ParametrGroupBox.Controls.Add(this.label2);
-            this.ParametrGroupBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.ParametrGroupBox.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.ParametrGroupBox.Location = new System.Drawing.Point(183, 147);
             this.ParametrGroupBox.Name = "ParametrGroupBox";
             this.ParametrGroupBox.Size = new System.Drawing.Size(319, 170);
@@ -112,14 +113,14 @@
             // 
             this.N_numUpDown.Location = new System.Drawing.Point(38, 113);
             this.N_numUpDown.Name = "N_numUpDown";
-            this.N_numUpDown.Size = new System.Drawing.Size(83, 26);
+            this.N_numUpDown.Size = new System.Drawing.Size(83, 29);
             this.N_numUpDown.TabIndex = 2;
             // 
             // eps_textbox
             // 
             this.eps_textbox.Location = new System.Drawing.Point(243, 102);
             this.eps_textbox.Name = "eps_textbox";
-            this.eps_textbox.Size = new System.Drawing.Size(29, 26);
+            this.eps_textbox.Size = new System.Drawing.Size(29, 29);
             this.eps_textbox.TabIndex = 1;
             this.eps_textbox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.Number);
             // 
@@ -127,7 +128,7 @@
             // 
             this.y0_textbox.Location = new System.Drawing.Point(213, 72);
             this.y0_textbox.Name = "y0_textbox";
-            this.y0_textbox.Size = new System.Drawing.Size(85, 26);
+            this.y0_textbox.Size = new System.Drawing.Size(85, 29);
             this.y0_textbox.TabIndex = 1;
             this.y0_textbox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.Number);
             // 
@@ -135,7 +136,7 @@
             // 
             this.b_textbox.Location = new System.Drawing.Point(213, 34);
             this.b_textbox.Name = "b_textbox";
-            this.b_textbox.Size = new System.Drawing.Size(85, 26);
+            this.b_textbox.Size = new System.Drawing.Size(85, 29);
             this.b_textbox.TabIndex = 1;
             this.b_textbox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.Number);
             // 
@@ -143,7 +144,7 @@
             // 
             this.x0_textbox.Location = new System.Drawing.Point(36, 73);
             this.x0_textbox.Name = "x0_textbox";
-            this.x0_textbox.Size = new System.Drawing.Size(85, 26);
+            this.x0_textbox.Size = new System.Drawing.Size(85, 29);
             this.x0_textbox.TabIndex = 1;
             this.x0_textbox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.Number);
             // 
@@ -151,7 +152,7 @@
             // 
             this.a_textbox.Location = new System.Drawing.Point(36, 36);
             this.a_textbox.Name = "a_textbox";
-            this.a_textbox.Size = new System.Drawing.Size(85, 26);
+            this.a_textbox.Size = new System.Drawing.Size(85, 29);
             this.a_textbox.TabIndex = 1;
             this.a_textbox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.Number);
             // 
@@ -246,7 +247,7 @@
             this.MethodGroupBox.Controls.Add(this.Euler_recalBox);
             this.MethodGroupBox.Controls.Add(this.ChordBox);
             this.MethodGroupBox.Controls.Add(this.EulerBox);
-            this.MethodGroupBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.MethodGroupBox.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.MethodGroupBox.Location = new System.Drawing.Point(674, 147);
             this.MethodGroupBox.Name = "MethodGroupBox";
             this.MethodGroupBox.Size = new System.Drawing.Size(234, 170);
@@ -259,7 +260,7 @@
             this.AdamsBox.AutoSize = true;
             this.AdamsBox.Location = new System.Drawing.Point(19, 141);
             this.AdamsBox.Name = "AdamsBox";
-            this.AdamsBox.Size = new System.Drawing.Size(87, 24);
+            this.AdamsBox.Size = new System.Drawing.Size(89, 25);
             this.AdamsBox.TabIndex = 0;
             this.AdamsBox.Text = "Адемса";
             this.AdamsBox.UseVisualStyleBackColor = true;
@@ -269,7 +270,7 @@
             this.MilnaBox.AutoSize = true;
             this.MilnaBox.Location = new System.Drawing.Point(19, 118);
             this.MilnaBox.Name = "MilnaBox";
-            this.MilnaBox.Size = new System.Drawing.Size(78, 24);
+            this.MilnaBox.Size = new System.Drawing.Size(82, 25);
             this.MilnaBox.TabIndex = 0;
             this.MilnaBox.Text = "Милна";
             this.MilnaBox.UseVisualStyleBackColor = true;
@@ -279,7 +280,7 @@
             this.Runge_kuttaBox.AutoSize = true;
             this.Runge_kuttaBox.Location = new System.Drawing.Point(19, 95);
             this.Runge_kuttaBox.Name = "Runge_kuttaBox";
-            this.Runge_kuttaBox.Size = new System.Drawing.Size(116, 24);
+            this.Runge_kuttaBox.Size = new System.Drawing.Size(122, 25);
             this.Runge_kuttaBox.TabIndex = 0;
             this.Runge_kuttaBox.Text = "Рунге кутта";
             this.Runge_kuttaBox.UseVisualStyleBackColor = true;
@@ -289,7 +290,7 @@
             this.Euler_recalBox.AutoSize = true;
             this.Euler_recalBox.Location = new System.Drawing.Point(19, 72);
             this.Euler_recalBox.Name = "Euler_recalBox";
-            this.Euler_recalBox.Size = new System.Drawing.Size(193, 24);
+            this.Euler_recalBox.Size = new System.Drawing.Size(199, 25);
             this.Euler_recalBox.TabIndex = 0;
             this.Euler_recalBox.Text = "Эйлера с пересчётом";
             this.Euler_recalBox.UseVisualStyleBackColor = true;
@@ -299,7 +300,7 @@
             this.ChordBox.AutoSize = true;
             this.ChordBox.Location = new System.Drawing.Point(19, 49);
             this.ChordBox.Name = "ChordBox";
-            this.ChordBox.Size = new System.Drawing.Size(68, 24);
+            this.ChordBox.Size = new System.Drawing.Size(71, 25);
             this.ChordBox.TabIndex = 0;
             this.ChordBox.Text = "Хорд";
             this.ChordBox.UseVisualStyleBackColor = true;
@@ -309,24 +310,36 @@
             this.EulerBox.AutoSize = true;
             this.EulerBox.Location = new System.Drawing.Point(19, 26);
             this.EulerBox.Name = "EulerBox";
-            this.EulerBox.Size = new System.Drawing.Size(86, 24);
+            this.EulerBox.Size = new System.Drawing.Size(87, 25);
             this.EulerBox.TabIndex = 0;
             this.EulerBox.Text = "Эйлера";
             this.EulerBox.UseVisualStyleBackColor = true;
             // 
             // dif_textbox
             // 
-            this.dif_textbox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.dif_textbox.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.dif_textbox.Location = new System.Drawing.Point(400, 96);
             this.dif_textbox.Name = "dif_textbox";
-            this.dif_textbox.Size = new System.Drawing.Size(330, 26);
+            this.dif_textbox.Size = new System.Drawing.Size(330, 29);
             this.dif_textbox.TabIndex = 7;
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Location = new System.Drawing.Point(750, 30);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(198, 78);
+            this.label10.TabIndex = 10;
+            this.label10.Text = "sin(x) - синус x ( sin x );\r\npi - Значение величины Pi\r\nexp(x) - Экспонента значе" +
+    "ния\r\nabs(x) - Модуль значения\r\nsqrt(x) - Квадратный корень значения\r\npov(x,степе" +
+    "нь) - Возводит x в степень";
             // 
             // InputControl
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.Controls.Add(this.label10);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.SolveButton);
             this.Controls.Add(this.ParametrGroupBox);
@@ -371,5 +384,6 @@
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label8;
         public System.Windows.Forms.TextBox eps_textbox;
+        private System.Windows.Forms.Label label10;
     }
 }

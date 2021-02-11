@@ -31,8 +31,8 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
             this.Panel = new System.Windows.Forms.Panel();
             this.panelTitleBar = new System.Windows.Forms.Panel();
-            this.Title_label = new System.Windows.Forms.Label();
             this.Out = new System.Windows.Forms.Button();
+            this.Title_label = new System.Windows.Forms.Label();
             this.panelTitleBar.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -48,7 +48,7 @@
             // 
             // panelTitleBar
             // 
-            this.panelTitleBar.BackColor = System.Drawing.Color.LightSalmon;
+            this.panelTitleBar.BackColor = System.Drawing.Color.MidnightBlue;
             this.panelTitleBar.Controls.Add(this.Out);
             this.panelTitleBar.Controls.Add(this.Title_label);
             this.panelTitleBar.Dock = System.Windows.Forms.DockStyle.Top;
@@ -57,21 +57,6 @@
             this.panelTitleBar.Size = new System.Drawing.Size(1130, 51);
             this.panelTitleBar.TabIndex = 6;
             this.panelTitleBar.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panelTitleBar_MouseDown);
-            // 
-            // Title_label
-            // 
-            this.Title_label.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.Title_label.AutoSize = true;
-            this.Title_label.BackColor = System.Drawing.Color.Transparent;
-            this.Title_label.Font = new System.Drawing.Font("Modern No. 20", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.Title_label.ForeColor = System.Drawing.Color.White;
-            this.Title_label.Location = new System.Drawing.Point(316, 12);
-            this.Title_label.Name = "Title_label";
-            this.Title_label.Size = new System.Drawing.Size(533, 25);
-            this.Title_label.TabIndex = 0;
-            this.Title_label.Text = "РЕШЕНИЕ ДИФФЕРЕНЦИАЛЬНОГО УРАВНЕНИЯ";
-            this.Title_label.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.Title_label.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panelTitleBar_MouseDown);
             // 
             // Out
             // 
@@ -88,6 +73,21 @@
             this.Out.UseVisualStyleBackColor = false;
             this.Out.Click += new System.EventHandler(this.Out_Click);
             // 
+            // Title_label
+            // 
+            this.Title_label.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.Title_label.AutoSize = true;
+            this.Title_label.BackColor = System.Drawing.Color.Transparent;
+            this.Title_label.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.Title_label.ForeColor = System.Drawing.Color.White;
+            this.Title_label.Location = new System.Drawing.Point(316, 12);
+            this.Title_label.Name = "Title_label";
+            this.Title_label.Size = new System.Drawing.Size(544, 26);
+            this.Title_label.TabIndex = 0;
+            this.Title_label.Text = "РЕШЕНИЕ ДИФФЕРЕНЦИАЛЬНОГО УРАВНЕНИЯ";
+            this.Title_label.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.Title_label.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panelTitleBar_MouseDown);
+            // 
             // MainForm
             // 
             this.AllowDrop = true;
@@ -97,7 +97,7 @@
             this.ClientSize = new System.Drawing.Size(1130, 621);
             this.Controls.Add(this.panelTitleBar);
             this.Controls.Add(this.Panel);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "MainForm";
             this.Text = "Решение дифференциального уравнения";
