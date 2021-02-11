@@ -16,11 +16,11 @@ namespace Ciclen_Method
     public partial class MainForm : System.Windows.Forms.Form
 
     {
+        private Button currentBtn;
+        private Panel panel;
         // закруглённый button https://www.cyberforum.ru/post9872749.html
         public static double a;
-        public static double b;
-        //public static double x0;
-        //public static double y0;
+        public static double b;        
         public static int N;
         public static int eps;
         static double f;
@@ -81,22 +81,13 @@ namespace Ciclen_Method
         [DllImport("user32.DLL", EntryPoint = "SendMessage")]
         private extern static void SendMessage(System.IntPtr hWnd, int wMsg, int wParam, int lParam);
 
-        public void CreateAndPlaceToPage(Type pageType)
-        {
-            // создаем новый экземпляр при помощи ссылки на тип
-            var userControl = (UserControl)Activator.CreateInstance(pageType);
-            // и добавляем его в панель Panel1
-            Panel.Controls.Add(userControl);
-            // предыдущий размещённый пользовательский элемент удаляем
-            if (Panel.Controls.Count > 1)
-                Panel.Controls.RemoveAt(0);            
-        }
-
         private void panelTitleBar_MouseDown(object sender, MouseEventArgs e)
         {
             ReleaseCapture();
-            SendMessage(Handle, 0x112, 0xf012, 0);
-        }
+            SendMessage(this.Handle, 0x112, 0xf012, 0);
+        }        
+
+        
 
         private void Out_Click(object sender, EventArgs e)
         {
@@ -113,6 +104,11 @@ namespace Ciclen_Method
         {
             try
             {
+                //if(sender != null)
+                //{
+                //    currentBtn = (Button)sender;
+                //}
+
                 ParserFunction.addFunction("sin", new SinFunction());
                 ParserFunction.addFunction("pi", new PiFunction());
                 ParserFunction.addFunction("exp", new ExpFunction());

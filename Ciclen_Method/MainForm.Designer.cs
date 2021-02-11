@@ -68,9 +68,6 @@
             // 
             // Panel
             // 
-            this.Panel.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
             this.Panel.Controls.Add(this.label10);
             this.Panel.Controls.Add(this.label1);
             this.Panel.Controls.Add(this.SolveButton);
