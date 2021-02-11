@@ -112,9 +112,6 @@ namespace Ciclen_Method.Forms
             ActivateButton(sender, RGBColors.color6);
         }
 
-        private void BackButton_Click(object sender, EventArgs e)
-        {
-            OpenChildForm(new MainForm());
-        }
+        
     }
 }

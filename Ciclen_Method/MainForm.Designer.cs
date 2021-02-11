@@ -59,6 +59,7 @@
             this.panelTitleBar = new System.Windows.Forms.Panel();
             this.Out = new System.Windows.Forms.Button();
             this.Title_label = new System.Windows.Forms.Label();
+            this.BackButton = new System.Windows.Forms.Button();
             this.PanelDesktop.SuspendLayout();
             this.ParametrGroupBox.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.N_numUpDown)).BeginInit();
@@ -68,6 +69,7 @@
             // 
             // PanelDesktop
             // 
+            this.PanelDesktop.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.PanelDesktop.Controls.Add(this.label10);
             this.PanelDesktop.Controls.Add(this.label1);
             this.PanelDesktop.Controls.Add(this.SolveButton);
@@ -357,6 +359,7 @@
             // panelTitleBar
             // 
             this.panelTitleBar.BackColor = System.Drawing.Color.MidnightBlue;
+            this.panelTitleBar.Controls.Add(this.BackButton);
             this.panelTitleBar.Controls.Add(this.Out);
             this.panelTitleBar.Controls.Add(this.Title_label);
             this.panelTitleBar.Dock = System.Windows.Forms.DockStyle.Top;
@@ -372,6 +375,7 @@
             this.Out.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("Out.BackgroundImage")));
             this.Out.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.Out.Cursor = System.Windows.Forms.Cursors.Default;
+            this.Out.FlatAppearance.MouseOverBackColor = System.Drawing.Color.LightGray;
             this.Out.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.Out.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.Out.Location = new System.Drawing.Point(1103, 0);
@@ -396,6 +400,25 @@
             this.Title_label.Text = "РЕШЕНИЕ ДИФФЕРЕНЦИАЛЬНОГО УРАВНЕНИЯ";
             this.Title_label.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.Title_label.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panelTitleBar_MouseDown);
+            // 
+            // BackButton
+            // 
+            this.BackButton.BackColor = System.Drawing.Color.Transparent;
+            this.BackButton.Cursor = System.Windows.Forms.Cursors.Default;
+            this.BackButton.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.BackButton.FlatAppearance.BorderSize = 0;
+            this.BackButton.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Black;
+            this.BackButton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Black;
+            this.BackButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.BackButton.ForeColor = System.Drawing.Color.Transparent;
+            this.BackButton.Image = ((System.Drawing.Image)(resources.GetObject("BackButton.Image")));
+            this.BackButton.Location = new System.Drawing.Point(0, 0);
+            this.BackButton.Margin = new System.Windows.Forms.Padding(0);
+            this.BackButton.Name = "BackButton";
+            this.BackButton.Size = new System.Drawing.Size(42, 54);
+            this.BackButton.TabIndex = 17;
+            this.BackButton.UseVisualStyleBackColor = false;
+            this.BackButton.Click += new System.EventHandler(this.BackButton_Click);
             // 
             // MainForm
             // 
@@ -456,6 +479,7 @@
         private System.Windows.Forms.CheckBox ChordBox;
         protected internal System.Windows.Forms.TextBox dif_textbox;
         protected internal System.Windows.Forms.CheckBox EulerBox;
+        private System.Windows.Forms.Button BackButton;
     }
 }
 
