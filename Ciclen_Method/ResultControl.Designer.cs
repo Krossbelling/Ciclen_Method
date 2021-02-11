@@ -118,7 +118,6 @@
             this.BackButton.Size = new System.Drawing.Size(48, 35);
             this.BackButton.TabIndex = 11;
             this.BackButton.UseVisualStyleBackColor = false;
-            this.BackButton.Click += new System.EventHandler(this.BackButton_Click);
             // 
             // label1
             // 
@@ -194,7 +193,6 @@
             this.button1.TabIndex = 13;
             this.button1.Text = "Вернуться к вводу";
             this.button1.UseVisualStyleBackColor = false;
-            this.button1.Click += new System.EventHandler(this.BackButton_Click);
             // 
             // dataGridView2
             // 

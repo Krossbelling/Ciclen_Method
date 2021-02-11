@@ -17,25 +17,11 @@ namespace Ciclen_Method
         {            
             InitializeComponent();
 
-            for (int i = 0; i < InputControl.N; i++)
+            for (int i = 0; i < MainForm.N; i++)
             {
-                //Добавляем строку, указывая значения колонок поочереди слева направо
-                dataGridView1.Rows.Add(i, InputControl.x[i], Math.Round(InputControl.y[i], InputControl.eps));
+                dataGridView1.Rows.Add(i, MainForm.x[i], Math.Round(MainForm.y[i], MainForm.eps));
             }
-        }
-
-        private void BackButton_Click(object sender, EventArgs e)
-        {
-            // пытаемся получить ссылку на интерфейс навигатора,
-            // который должна реализовать форма Form1, на которой находится сейчас экземпляр UserControl1
-            // если это не так, выходим
-            if (!(ParentForm is INavigator navigator)) return;
-            // вызываем метод, который создаст и разместит экземпляр UserControl2 на панели Panel1 формы Form1
-            navigator.CreateAndPlaceToPage(typeof(InputControl));
-
-
-        }
-
+        }        
         
     }
 }
