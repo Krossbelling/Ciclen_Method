@@ -93,6 +93,18 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Data.cs" />
+    <Compile Include="Forms\ResultDesktopChar.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\ResultDesktopChar.Designer.cs">
+      <DependentUpon>ResultDesktopChar.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\ResultDesktopCharAll.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\ResultDesktopCharAll.Designer.cs">
+      <DependentUpon>ResultDesktopCharAll.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\ResultMainForm.cs">
       <SubType>Form</SubType>
     </Compile>

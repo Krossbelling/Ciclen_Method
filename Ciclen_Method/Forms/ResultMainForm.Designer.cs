@@ -38,15 +38,15 @@
             this.iconButton2 = new FontAwesome.Sharp.IconButton();
             this.iconButton1 = new FontAwesome.Sharp.IconButton();
             this.PanelDesktop = new System.Windows.Forms.Panel();
+            this.Chart = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.i = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.X = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Y = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Chart = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.PanelMenu.SuspendLayout();
             this.PanelDesktop.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Chart)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
             // PanelMenu
@@ -244,6 +244,17 @@
             this.PanelDesktop.Size = new System.Drawing.Size(1131, 491);
             this.PanelDesktop.TabIndex = 1;
             // 
+            // Chart
+            // 
+            this.Chart.BackColor = System.Drawing.Color.Wheat;
+            chartArea1.Name = "ChartArea1";
+            this.Chart.ChartAreas.Add(chartArea1);
+            this.Chart.Location = new System.Drawing.Point(454, 59);
+            this.Chart.Name = "Chart";
+            this.Chart.Size = new System.Drawing.Size(620, 343);
+            this.Chart.TabIndex = 12;
+            this.Chart.Text = "chart1";
+            // 
             // dataGridView1
             // 
             this.dataGridView1.BackgroundColor = System.Drawing.Color.White;
@@ -257,7 +268,6 @@
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.Size = new System.Drawing.Size(263, 343);
             this.dataGridView1.TabIndex = 11;
-            this.dataGridView1.Visible = false;
             // 
             // i
             // 
@@ -280,18 +290,6 @@
             this.Y.Name = "Y";
             this.Y.Width = 85;
             // 
-            // Chart
-            // 
-            this.Chart.BackColor = System.Drawing.Color.Wheat;
-            chartArea1.Name = "ChartArea1";
-            this.Chart.ChartAreas.Add(chartArea1);
-            this.Chart.Location = new System.Drawing.Point(454, 59);
-            this.Chart.Name = "Chart";
-            this.Chart.Size = new System.Drawing.Size(620, 343);
-            this.Chart.TabIndex = 12;
-            this.Chart.Text = "chart1";
-            this.Chart.Visible = false;
-            // 
             // ResultMainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -305,8 +303,8 @@
             this.Text = "ResultMainForm";
             this.PanelMenu.ResumeLayout(false);
             this.PanelDesktop.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.Chart)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
 
         }
