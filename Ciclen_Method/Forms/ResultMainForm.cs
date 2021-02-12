@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Windows.Forms.DataVisualization.Charting;
 using FontAwesome.Sharp;
 
 namespace Ciclen_Method.Forms
@@ -15,7 +16,7 @@ namespace Ciclen_Method.Forms
     {
         private IconButton currentBtn;
         private Panel leftBorderBtn;
-        private System.Windows.Forms.Form currentChildForm;
+        // private System.Windows.Forms.Form currentChildForm;
         public ResultMainForm()
         {
             InitializeComponent();
@@ -23,23 +24,12 @@ namespace Ciclen_Method.Forms
             leftBorderBtn.Size = new Size(1126, 47);
             PanelMenu.Controls.Add(leftBorderBtn);
 
+            // Chart chart = new Chart();
+
+
 
         }
-        private void OpenChildForm(System.Windows.Forms.Form childForm)
-        {
-            if (currentChildForm != null)
-            {
-                currentChildForm.Close();
-            }
-            currentChildForm = childForm;
-            childForm.TopLevel = false;
-            childForm.FormBorderStyle = FormBorderStyle.None;
-            childForm.Dock = DockStyle.Fill;
-            panelBack.Controls.Add(childForm);
-            panelBack.Tag = childForm;
-            childForm.BringToFront();
-            childForm.Show();
-        }
+        
         private struct RGBColors
         {
             public static Color color1 = Color.FromArgb(172, 126, 241 );
@@ -85,6 +75,27 @@ namespace Ciclen_Method.Forms
         private void iconButton1_Click(object sender, EventArgs e)
         {
             ActivateButton(sender , RGBColors.color1);
+            //for (int i = 0; i < MainForm.N; i++)
+            //{
+            //    dataGridView1.Rows.Add(i, MainForm.x[i], Math.Round(MainForm.y[i], MainForm.eps));
+            //    Chart.Series[0].Points.AddXY(MainForm.x[i], Math.Round(MainForm.y[i], MainForm.eps));
+            //}
+
+            Chart.Titles.Add("Метод Эйлера");
+            // Chart.Legends[0].Name = "Метод Эйлера";
+            Series seriesOfPoint = new Series()
+            {
+                ChartType = SeriesChartType.Line
+            };
+            for (int i = 0; i < MainForm.N; i++)
+            {
+                dataGridView1.Rows.Add(i, MainForm.x[i], Math.Round(MainForm.y[i], MainForm.eps));
+                seriesOfPoint.Points.AddXY(MainForm.x[i], Math.Round(MainForm.y[i], MainForm.eps));
+            }
+            Chart.Series.Add(seriesOfPoint);
+
+
+
         }
 
         private void iconButton2_Click(object sender, EventArgs e)

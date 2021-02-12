@@ -57,9 +57,9 @@
             this.EulerBox = new System.Windows.Forms.CheckBox();
             this.dif_textbox = new System.Windows.Forms.TextBox();
             this.panelTitleBar = new System.Windows.Forms.Panel();
+            this.BackButton = new System.Windows.Forms.Button();
             this.Out = new System.Windows.Forms.Button();
             this.Title_label = new System.Windows.Forms.Label();
-            this.BackButton = new System.Windows.Forms.Button();
             this.PanelDesktop.SuspendLayout();
             this.ParametrGroupBox.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.N_numUpDown)).BeginInit();
@@ -78,7 +78,7 @@
             this.PanelDesktop.Controls.Add(this.dif_textbox);
             this.PanelDesktop.Location = new System.Drawing.Point(0, 57);
             this.PanelDesktop.Name = "PanelDesktop";
-            this.PanelDesktop.Size = new System.Drawing.Size(1126, 548);
+            this.PanelDesktop.Size = new System.Drawing.Size(1131, 548);
             this.PanelDesktop.TabIndex = 5;
             // 
             // label10
@@ -369,6 +369,25 @@
             this.panelTitleBar.TabIndex = 6;
             this.panelTitleBar.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panelTitleBar_MouseDown);
             // 
+            // BackButton
+            // 
+            this.BackButton.BackColor = System.Drawing.Color.Transparent;
+            this.BackButton.Cursor = System.Windows.Forms.Cursors.Default;
+            this.BackButton.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.BackButton.FlatAppearance.BorderSize = 0;
+            this.BackButton.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Black;
+            this.BackButton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Black;
+            this.BackButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.BackButton.ForeColor = System.Drawing.Color.Transparent;
+            this.BackButton.Image = ((System.Drawing.Image)(resources.GetObject("BackButton.Image")));
+            this.BackButton.Location = new System.Drawing.Point(0, 0);
+            this.BackButton.Margin = new System.Windows.Forms.Padding(0);
+            this.BackButton.Name = "BackButton";
+            this.BackButton.Size = new System.Drawing.Size(42, 54);
+            this.BackButton.TabIndex = 17;
+            this.BackButton.UseVisualStyleBackColor = false;
+            this.BackButton.Click += new System.EventHandler(this.BackButton_Click);
+            // 
             // Out
             // 
             this.Out.BackColor = System.Drawing.Color.Transparent;
@@ -401,32 +420,13 @@
             this.Title_label.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.Title_label.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panelTitleBar_MouseDown);
             // 
-            // BackButton
-            // 
-            this.BackButton.BackColor = System.Drawing.Color.Transparent;
-            this.BackButton.Cursor = System.Windows.Forms.Cursors.Default;
-            this.BackButton.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.BackButton.FlatAppearance.BorderSize = 0;
-            this.BackButton.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Black;
-            this.BackButton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Black;
-            this.BackButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.BackButton.ForeColor = System.Drawing.Color.Transparent;
-            this.BackButton.Image = ((System.Drawing.Image)(resources.GetObject("BackButton.Image")));
-            this.BackButton.Location = new System.Drawing.Point(0, 0);
-            this.BackButton.Margin = new System.Windows.Forms.Padding(0);
-            this.BackButton.Name = "BackButton";
-            this.BackButton.Size = new System.Drawing.Size(42, 54);
-            this.BackButton.TabIndex = 17;
-            this.BackButton.UseVisualStyleBackColor = false;
-            this.BackButton.Click += new System.EventHandler(this.BackButton_Click);
-            // 
             // MainForm
             // 
             this.AllowDrop = true;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.ClientSize = new System.Drawing.Size(1131, 617);
+            this.ClientSize = new System.Drawing.Size(1131, 620);
             this.Controls.Add(this.panelTitleBar);
             this.Controls.Add(this.PanelDesktop);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;

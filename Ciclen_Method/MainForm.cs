@@ -17,8 +17,8 @@ namespace Ciclen_Method
     public partial class MainForm : System.Windows.Forms.Form
 
     {
-        private Button currentBtn;
-        private Panel panel;
+        //private Button currentBtn;
+        //private Panel panel;
         private System.Windows.Forms.Form currentChildForm;
         // закруглённый button https://www.cyberforum.ru/post9872749.html
         public static double a;
@@ -285,8 +285,7 @@ namespace Ciclen_Method
             {
                 currentChildForm.Close();
                 Refresh();
-            }
-                
+            }                
         }
     }
 
