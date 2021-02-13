@@ -40,7 +40,7 @@ namespace Ciclen_Method
         public MainForm()
         {
             InitializeComponent();
-            
+
             this.Text = string.Empty;
             this.ControlBox = false;
             this.DoubleBuffered = true;
@@ -287,6 +287,8 @@ namespace Ciclen_Method
                 Refresh();
             }                
         }
+
+        
     }
 
     public class Parser

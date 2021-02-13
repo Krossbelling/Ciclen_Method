@@ -242,7 +242,7 @@
             // 
             // PanelResult
             // 
-            this.PanelResult.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.PanelResult.BackColor = System.Drawing.Color.DarkGoldenrod;
             this.PanelResult.Controls.Add(this.Chart);
             this.PanelResult.Controls.Add(this.dataGridView1);
             this.PanelResult.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -271,7 +271,7 @@
             // 
             this.dataGridView1.AllowUserToAddRows = false;
             this.dataGridView1.AllowUserToDeleteRows = false;
-            this.dataGridView1.BackgroundColor = System.Drawing.Color.White;
+            this.dataGridView1.BackgroundColor = System.Drawing.Color.Wheat;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.i,
