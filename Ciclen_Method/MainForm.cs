@@ -29,12 +29,12 @@ namespace Ciclen_Method
         public static string uravn = "";
         public static double[] x;
         public static double[] y;
-        static bool Eulerbox;
-        static bool Chordbox;
-        static bool Euler_recalbox;
-        static bool Runge_kuttabox;
-        static bool Milnabox;
-        static bool Adamsbox;
+        public static bool Eulerbox;
+        public static bool Chordbox;
+        public static bool Euler_recalbox;
+        public static bool Runge_kuttabox;
+        public static bool Milnabox;
+        public static bool Adamsbox;
         double x0;
         double y0;
         public MainForm()

@@ -26,6 +26,42 @@ namespace Ciclen_Method.Forms
             leftBorderBtn.Size = new Size(1126, 47);
             PanelMenu.Controls.Add(leftBorderBtn);
 
+            
+            // currentBtn.BackColor = Color.FromArgb(37, 36, 81); 
+            // currentBtn.BackColor = Color.FromArgb(153, 180, 209); - цвет фона
+
+            if (MainForm.Eulerbox == true)
+            {
+                EulerButton.BackColor = Color.FromArgb(153, 180, 209);
+                EulerButton.IconChar = IconChar.Faucet;
+            }
+            if (MainForm.Chordbox == true)
+            {
+                ChordButton.BackColor = Color.FromArgb(153, 180, 209);
+                ChordButton.IconChar = IconChar.Faucet;
+            }
+            if (MainForm.Euler_recalbox == true)
+            {
+                Euler_recalButton.BackColor = Color.FromArgb(153, 180, 209);
+                Euler_recalButton.IconChar = IconChar.Faucet;
+            }
+            if (MainForm.Runge_kuttabox == true)
+            {
+                Runge_kuttaButton.BackColor = Color.FromArgb(153, 180, 209);
+                Runge_kuttaButton.IconChar = IconChar.Faucet;
+            }
+            if (MainForm.Milnabox == true)
+            {
+                MilnaButton.BackColor = Color.FromArgb(153, 180, 209);
+                MilnaButton.IconChar = IconChar.Faucet;
+            }
+            if (MainForm.Adamsbox == true)
+            {
+                AdamsButton.BackColor = Color.FromArgb(153, 180, 209);
+                AdamsButton.IconChar = IconChar.Faucet;
+            }
+
+
             // Chart chart = new Chart();
 
         }
@@ -46,7 +82,8 @@ namespace Ciclen_Method.Forms
                 DisableButton();
                 // Button
                 currentBtn = (IconButton)senderBtn;
-                // currentBtn.BackColor = Color.FromArgb(37, 36, 81);
+                // currentBtn.BackColor = Color.FromArgb(37, 36, 81); 
+                // currentBtn.BackColor = Color.FromArgb(153, 180, 209); - цвет фона
                 currentBtn.ForeColor = color;
                 currentBtn.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
                 currentBtn.IconColor = color;
@@ -100,51 +137,79 @@ namespace Ciclen_Method.Forms
         }
 
 
-        private void iconButton1_Click(object sender, EventArgs e)
+        private void EulerButton_Click(object sender, EventArgs e)
         {
-            ActivateButton(sender , RGBColors.color1);
+            
+            if (MainForm.Eulerbox == true)
+            {                
+                dataGridView1.Rows.Clear();
+                Chart.Series.Clear();
+                ActivateButton(sender, RGBColors.color4);
 
-            // OpenChildForm(new ResultDesktopChar());
-            // OpenChildControl(new Use());
+                // OpenChildForm(new ResultDesktopChar());
+                // OpenChildControl(new Use());
 
-            Chart.Titles.Add("Метод Эйлера");            
-            Series seriesOfPoint = new Series()
-            {
-                ChartType = SeriesChartType.Line
-            };
-            for (int i = 0; i < MainForm.N; i++)
-            {
-                dataGridView1.Rows.Add(i+1, MainForm.x[i], Math.Round(MainForm.y[i], MainForm.eps));
-                seriesOfPoint.Points.AddXY(MainForm.x[i], Math.Round(MainForm.y[i], MainForm.eps));
-            }
-            Chart.Series.Add(seriesOfPoint);
+                // Chart.Titles.Add("Метод Эйлера");
+                Chart.Titles[0].Text = "Метод Эйлера";
+                Series seriesOfPoint = new Series()
+                {
+                    ChartType = SeriesChartType.Line
+                };
+                for (int i = 0; i < MainForm.N; i++)
+                {
+                    dataGridView1.Rows.Add(i + 1, MainForm.x[i], Math.Round(MainForm.y[i], MainForm.eps));
+                    seriesOfPoint.Points.AddXY(MainForm.x[i], Math.Round(MainForm.y[i], MainForm.eps));
+                }
+                Chart.Series.Add(seriesOfPoint);
 
+
+            }                       
 
         }
 
         private void iconButton2_Click(object sender, EventArgs e)
         {
-            ActivateButton(sender, RGBColors.color2);
+            if (MainForm.Chordbox == true)
+            {
+                ActivateButton(sender, RGBColors.color4);
+            }
+                        
         }
 
         private void iconButton3_Click(object sender, EventArgs e)
         {
-            ActivateButton(sender, RGBColors.color3);
+            if (MainForm.Euler_recalbox == true)
+            {
+                ActivateButton(sender, RGBColors.color4);
+            }            
+            
         }
 
         private void iconButton4_Click(object sender, EventArgs e)
         {
-            ActivateButton(sender, RGBColors.color4);
+            if (MainForm.Runge_kuttabox == true)
+            {
+                ActivateButton(sender, RGBColors.color4);
+            }            
+            
         }
 
         private void iconButton5_Click(object sender, EventArgs e)
         {
-            ActivateButton(sender, RGBColors.color5);
+            if (MainForm.Milnabox == true)
+            {
+                ActivateButton(sender, RGBColors.color4);
+            }           
+            
         }
 
         private void iconButton6_Click(object sender, EventArgs e)
         {
-            ActivateButton(sender, RGBColors.color6);
+            if (MainForm.Adamsbox == true)
+            {
+                ActivateButton(sender, RGBColors.color4);
+            }
+            
         }
 
         
