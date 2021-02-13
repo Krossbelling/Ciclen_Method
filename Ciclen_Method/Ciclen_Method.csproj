@@ -125,6 +125,18 @@
     <Compile Include="ResultControl.Designer.cs">
       <DependentUpon>ResultControl.cs</DependentUpon>
     </Compile>
+    <Compile Include="Use.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Use.Designer.cs">
+      <DependentUpon>Use.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="Forms\ResultDesktopChar.resx">
+      <DependentUpon>ResultDesktopChar.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\ResultDesktopCharAll.resx">
+      <DependentUpon>ResultDesktopCharAll.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\ResultMainForm.resx">
       <DependentUpon>ResultMainForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -143,6 +155,9 @@
     </Compile>
     <EmbeddedResource Include="ResultControl.resx">
       <DependentUpon>ResultControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Use.resx">
+      <DependentUpon>Use.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">

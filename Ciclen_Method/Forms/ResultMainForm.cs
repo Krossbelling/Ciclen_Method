@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Windows.Forms.DataVisualization.Charting;
+using System.Windows.Forms.VisualStyles;
 using FontAwesome.Sharp;
 
 namespace Ciclen_Method.Forms
@@ -16,7 +17,8 @@ namespace Ciclen_Method.Forms
     {
         private IconButton currentBtn;
         private Panel leftBorderBtn;
-        // private System.Windows.Forms.Form currentChildForm;
+        private System.Windows.Forms.Form currentChildForm;
+        private Control currentChildControl;
         public ResultMainForm()
         {
             InitializeComponent();
@@ -25,8 +27,6 @@ namespace Ciclen_Method.Forms
             PanelMenu.Controls.Add(leftBorderBtn);
 
             // Chart chart = new Chart();
-
-
 
         }
         
@@ -48,10 +48,10 @@ namespace Ciclen_Method.Forms
                 currentBtn = (IconButton)senderBtn;
                 // currentBtn.BackColor = Color.FromArgb(37, 36, 81);
                 currentBtn.ForeColor = color;
-                currentBtn.TextAlign = ContentAlignment.MiddleCenter;
+                currentBtn.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
                 currentBtn.IconColor = color;
                 currentBtn.TextImageRelation = TextImageRelation.TextBeforeImage;
-                currentBtn.ImageAlign = ContentAlignment.MiddleRight;
+                currentBtn.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
                 // Left border button
                 leftBorderBtn.BackColor = color;
                 leftBorderBtn.Location = new Point(currentBtn.Location.X, 0);
@@ -65,35 +65,59 @@ namespace Ciclen_Method.Forms
             {
                 // currentBtn.BackColor = Color.FromArgb(37, 36, 81);
                 currentBtn.ForeColor = Color.Black;
-                currentBtn.TextAlign = ContentAlignment.MiddleLeft;
+                currentBtn.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
                 currentBtn.IconColor = Color.Black;
                 currentBtn.TextImageRelation = TextImageRelation.ImageBeforeText;
-                currentBtn.ImageAlign = ContentAlignment.MiddleRight;
+                currentBtn.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
             }
         }
+
+        private void OpenChildForm(System.Windows.Forms.Form childForm)
+        {
+            if (currentChildForm != null)
+            {
+                currentChildForm.Close();
+            }
+            currentChildForm = childForm;
+            childForm.TopLevel = false;
+            childForm.FormBorderStyle = FormBorderStyle.None;
+            childForm.Dock = DockStyle.Fill;
+            PanelResult.Controls.Add(childForm);
+            PanelResult.Tag = childForm;
+            childForm.BringToFront();
+            childForm.Show();
+        }
+        private void OpenChildControl(System.Windows.Forms.Control childForm)
+        {
+            
+            currentChildControl = childForm;
+            
+            childForm.Dock = DockStyle.Fill;
+            PanelResult.Controls.Add(childForm);
+            PanelResult.Tag = childForm;
+            childForm.BringToFront();
+            childForm.Show();
+        }
+
 
         private void iconButton1_Click(object sender, EventArgs e)
         {
             ActivateButton(sender , RGBColors.color1);
-            //for (int i = 0; i < MainForm.N; i++)
-            //{
-            //    dataGridView1.Rows.Add(i, MainForm.x[i], Math.Round(MainForm.y[i], MainForm.eps));
-            //    Chart.Series[0].Points.AddXY(MainForm.x[i], Math.Round(MainForm.y[i], MainForm.eps));
-            //}
 
-            Chart.Titles.Add("Метод Эйлера");
-            // Chart.Legends[0].Name = "Метод Эйлера";
+            // OpenChildForm(new ResultDesktopChar());
+            // OpenChildControl(new Use());
+
+            Chart.Titles.Add("Метод Эйлера");            
             Series seriesOfPoint = new Series()
             {
                 ChartType = SeriesChartType.Line
             };
             for (int i = 0; i < MainForm.N; i++)
             {
-                dataGridView1.Rows.Add(i, MainForm.x[i], Math.Round(MainForm.y[i], MainForm.eps));
+                dataGridView1.Rows.Add(i+1, MainForm.x[i], Math.Round(MainForm.y[i], MainForm.eps));
                 seriesOfPoint.Points.AddXY(MainForm.x[i], Math.Round(MainForm.y[i], MainForm.eps));
             }
             Chart.Series.Add(seriesOfPoint);
-
 
 
         }

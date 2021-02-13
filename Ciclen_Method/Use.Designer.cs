@@ -1,16 +1,16 @@
-﻿namespace Ciclen_Method.Forms
+﻿namespace Ciclen_Method
 {
-    partial class ResultDesktopChar
+    partial class Use
     {
-        /// <summary>
-        /// Required designer variable.
+        /// <summary> 
+        /// Обязательная переменная конструктора.
         /// </summary>
         private System.ComponentModel.IContainer components = null;
 
-        /// <summary>
-        /// Clean up any resources being used.
+        /// <summary> 
+        /// Освободить все используемые ресурсы.
         /// </summary>
-        /// <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        /// <param name="disposing">истинно, если управляемый ресурс должен быть удален; иначе ложно.</param>
         protected override void Dispose(bool disposing)
         {
             if (disposing && (components != null))
@@ -20,15 +20,15 @@
             base.Dispose(disposing);
         }
 
-        #region Windows Form Designer generated code
+        #region Код, автоматически созданный конструктором компонентов
 
-        /// <summary>
-        /// Required method for Designer support - do not modify
-        /// the contents of this method with the code editor.
+        /// <summary> 
+        /// Требуемый метод для поддержки конструктора — не изменяйте 
+        /// содержимое этого метода с помощью редактора кода.
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea4 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
             this.Chart = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.i = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -41,12 +41,12 @@
             // Chart
             // 
             this.Chart.BackColor = System.Drawing.Color.Wheat;
-            chartArea4.Name = "ChartArea1";
-            this.Chart.ChartAreas.Add(chartArea4);
-            this.Chart.Location = new System.Drawing.Point(444, 55);
+            chartArea1.Name = "ChartArea1";
+            this.Chart.ChartAreas.Add(chartArea1);
+            this.Chart.Location = new System.Drawing.Point(452, 74);
             this.Chart.Name = "Chart";
             this.Chart.Size = new System.Drawing.Size(620, 343);
-            this.Chart.TabIndex = 14;
+            this.Chart.TabIndex = 16;
             this.Chart.Text = "chart1";
             // 
             // dataGridView1
@@ -58,10 +58,10 @@
             this.X,
             this.Y});
             this.dataGridView1.GridColor = System.Drawing.SystemColors.Control;
-            this.dataGridView1.Location = new System.Drawing.Point(51, 55);
+            this.dataGridView1.Location = new System.Drawing.Point(59, 74);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.Size = new System.Drawing.Size(263, 343);
-            this.dataGridView1.TabIndex = 13;
+            this.dataGridView1.TabIndex = 15;
             // 
             // i
             // 
@@ -84,19 +84,15 @@
             this.Y.Name = "Y";
             this.Y.Width = 85;
             // 
-            // ResultDesktopChar
+            // Use
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.ClientSize = new System.Drawing.Size(1115, 452);
             this.Controls.Add(this.Chart);
             this.Controls.Add(this.dataGridView1);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Name = "ResultDesktopChar";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
-            this.Text = "ResultDesktopChar";
+            this.Name = "Use";
+            this.Size = new System.Drawing.Size(1131, 491);
             ((System.ComponentModel.ISupportInitialize)(this.Chart)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
