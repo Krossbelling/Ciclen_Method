@@ -229,7 +229,7 @@ namespace Ciclen_Method
             }
             catch (Exception exept)
             {
-                MessageBox.Show("Решить не удалось" + ".\n " + exept.Message + "\n " + "Проверьте ввод a, b, x0, N, y0, eps.");
+                MessageBox.Show("Решить не удалось" + ".\n " + exept.Message + "\n " + "Проверьте ввод данных:" + "\n " + "дифференциальное уравнение, a, b, x0, y0, N, eps.");
             }
         }
         public static double F(double x, double y)

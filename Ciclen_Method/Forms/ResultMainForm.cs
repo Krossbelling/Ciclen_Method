@@ -19,6 +19,7 @@ namespace Ciclen_Method.Forms
         private Panel leftBorderBtn;
         private System.Windows.Forms.Form currentChildForm;
         private Control currentChildControl;
+        private static bool allchart = false;
         public ResultMainForm()
         {
             InitializeComponent();
@@ -34,33 +35,46 @@ namespace Ciclen_Method.Forms
             {
                 EulerButton.BackColor = Color.FromArgb(153, 180, 209);
                 EulerButton.IconChar = IconChar.Faucet;
+                allchart = true;
             }
             if (MainForm.Chordbox == true)
             {
                 ChordButton.BackColor = Color.FromArgb(153, 180, 209);
                 ChordButton.IconChar = IconChar.Faucet;
+                allchart = true;
             }
             if (MainForm.Euler_recalbox == true)
             {
                 Euler_recalButton.BackColor = Color.FromArgb(153, 180, 209);
                 Euler_recalButton.IconChar = IconChar.Faucet;
+                allchart = true;
             }
             if (MainForm.Runge_kuttabox == true)
             {
                 Runge_kuttaButton.BackColor = Color.FromArgb(153, 180, 209);
                 Runge_kuttaButton.IconChar = IconChar.Faucet;
+                allchart = true;
             }
             if (MainForm.Milnabox == true)
             {
                 MilnaButton.BackColor = Color.FromArgb(153, 180, 209);
                 MilnaButton.IconChar = IconChar.Faucet;
+                allchart = true;
             }
             if (MainForm.Adamsbox == true)
             {
                 AdamsButton.BackColor = Color.FromArgb(153, 180, 209);
                 AdamsButton.IconChar = IconChar.Faucet;
+                allchart = true;
+            }
+            
+            if(allchart == true)
+            {
+                AllChartButton.BackColor = Color.FromArgb(153, 180, 209);
+                AllChartButton.IconChar = IconChar.Faucet;
             }
 
+            // Заменить на линк. Если объект true значит 
 
             // Chart chart = new Chart();
 
@@ -79,6 +93,9 @@ namespace Ciclen_Method.Forms
         {
             if (senderBtn != null)
             {
+                MessageSelectLabel.Visible = false;
+                ResultDataGridView.Visible = true;
+                ResultChart.Visible = true;
                 DisableButton();
                 // Button
                 currentBtn = (IconButton)senderBtn;
@@ -142,76 +159,122 @@ namespace Ciclen_Method.Forms
             
             if (MainForm.Eulerbox == true)
             {                
-                dataGridView1.Rows.Clear();
-                Chart.Series.Clear();
+                ResultDataGridView.Rows.Clear();
+                ResultChart.Series.Clear();
                 ActivateButton(sender, RGBColors.color4);
+                ResultChart.Location = new Point(453, 74);
+                ResultChart.Size = new Size(619, 343);
 
                 // OpenChildForm(new ResultDesktopChar());
                 // OpenChildControl(new Use());
 
                 // Chart.Titles.Add("Метод Эйлера");
-                Chart.Titles[0].Text = "Метод Эйлера";
+                ResultChart.Titles[0].Text = "Метод Эйлера";
+                
+
                 Series seriesOfPoint = new Series()
                 {
-                    ChartType = SeriesChartType.Line
+                    ChartType = SeriesChartType.Line,                    
+                    
                 };
                 for (int i = 0; i < MainForm.N; i++)
                 {
-                    dataGridView1.Rows.Add(i + 1, MainForm.x[i], Math.Round(MainForm.y[i], MainForm.eps));
+                    ResultDataGridView.Rows.Add(i + 1, MainForm.x[i], Math.Round(MainForm.y[i], MainForm.eps));
                     seriesOfPoint.Points.AddXY(MainForm.x[i], Math.Round(MainForm.y[i], MainForm.eps));
                 }
-                Chart.Series.Add(seriesOfPoint);
+                ResultChart.Series.Add(seriesOfPoint);
 
 
             }                       
-
         }
 
-        private void iconButton2_Click(object sender, EventArgs e)
+        private void ChordButton_Click(object sender, EventArgs e)
         {
             if (MainForm.Chordbox == true)
             {
+                ResultDataGridView.Rows.Clear();
+                ResultChart.Series.Clear();
                 ActivateButton(sender, RGBColors.color4);
-            }
-                        
+                ResultChart.Location = new Point(453, 74);
+                ResultChart.Size = new Size(619, 343);
+                ResultChart.Titles[0].Text = "Метод Хорд";
+            }                        
         }
 
-        private void iconButton3_Click(object sender, EventArgs e)
+        private void Euler_recalButton_Click(object sender, EventArgs e)
         {
             if (MainForm.Euler_recalbox == true)
             {
+                ResultDataGridView.Rows.Clear();
+                ResultChart.Series.Clear();
                 ActivateButton(sender, RGBColors.color4);
-            }            
-            
+                ResultChart.Location = new Point(453, 74);
+                ResultChart.Size = new Size(619, 343);
+                ResultChart.Titles[0].Text = "Метод Эйлера с пересчётом";
+            }                       
         }
 
-        private void iconButton4_Click(object sender, EventArgs e)
+        private void RubgeButton_Click(object sender, EventArgs e)
         {
             if (MainForm.Runge_kuttabox == true)
             {
+                ResultDataGridView.Rows.Clear();
+                ResultChart.Series.Clear();
                 ActivateButton(sender, RGBColors.color4);
-            }            
-            
+                ResultChart.Location = new Point(453, 74);
+                ResultChart.Size = new Size(619, 343);
+                ResultChart.Titles[0].Text = "Метод Рунге - Кутта";
+            }                       
         }
 
-        private void iconButton5_Click(object sender, EventArgs e)
+        private void MilnaButton_Click(object sender, EventArgs e)
         {
             if (MainForm.Milnabox == true)
             {
+                ResultDataGridView.Rows.Clear();
+                ResultChart.Series.Clear();
                 ActivateButton(sender, RGBColors.color4);
-            }           
-            
+                ResultChart.Location = new Point(453, 74);
+                ResultChart.Size = new Size(619, 343);
+                ResultChart.Titles[0].Text = "Метод Милна";
+            }                      
         }
 
-        private void iconButton6_Click(object sender, EventArgs e)
+        private void AdamsButton_Click(object sender, EventArgs e)
         {
             if (MainForm.Adamsbox == true)
             {
+                ResultDataGridView.Rows.Clear();
+                ResultChart.Series.Clear();
+                ResultChart.Location = new Point(453, 74);
+                ResultChart.Size = new Size(619, 343);
                 ActivateButton(sender, RGBColors.color4);
-            }
-            
+                ResultChart.Titles[0].Text = "Метод Адемса";
+            }                        
         }
 
-        
+        private void AllChartButton_Click(object sender, EventArgs e)
+        {
+            if (allchart == true)
+            {                
+                ResultDataGridView.Rows.Clear();
+                ResultChart.Series.Clear();
+                ActivateButton(sender, RGBColors.color4);
+                ResultDataGridView.Visible = false;
+                ResultChart.Titles[0].Text = "Все графики";
+                ResultChart.Location = new Point(59, 74);
+                ResultChart.Size = new Size(1000,400);
+                Series seriesOfPoint = new Series()
+                {
+                    ChartType = SeriesChartType.Line,
+                    
+                };
+                for (int i = 0; i < MainForm.N; i++)
+                {                    
+                    seriesOfPoint.Points.AddXY(MainForm.x[i], Math.Round(MainForm.y[i], MainForm.eps));
+                }
+                ResultChart.Series.Add(seriesOfPoint);
+            }
+        }
     }
 }

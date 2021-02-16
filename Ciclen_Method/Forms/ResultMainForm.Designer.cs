@@ -28,10 +28,10 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Title title1 = new System.Windows.Forms.DataVisualization.Charting.Title();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea2 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Title title2 = new System.Windows.Forms.DataVisualization.Charting.Title();
             this.PanelMenu = new System.Windows.Forms.Panel();
-            this.iconButton7 = new FontAwesome.Sharp.IconButton();
+            this.AllChartButton = new FontAwesome.Sharp.IconButton();
             this.AdamsButton = new FontAwesome.Sharp.IconButton();
             this.MilnaButton = new FontAwesome.Sharp.IconButton();
             this.Runge_kuttaButton = new FontAwesome.Sharp.IconButton();
@@ -39,21 +39,22 @@
             this.ChordButton = new FontAwesome.Sharp.IconButton();
             this.EulerButton = new FontAwesome.Sharp.IconButton();
             this.PanelResult = new System.Windows.Forms.Panel();
-            this.Chart = new System.Windows.Forms.DataVisualization.Charting.Chart();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.ResultChart = new System.Windows.Forms.DataVisualization.Charting.Chart();
+            this.ResultDataGridView = new System.Windows.Forms.DataGridView();
             this.i = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.X = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Y = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.MessageSelectLabel = new System.Windows.Forms.Label();
             this.PanelMenu.SuspendLayout();
             this.PanelResult.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.Chart)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ResultChart)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ResultDataGridView)).BeginInit();
             this.SuspendLayout();
             // 
             // PanelMenu
             // 
             this.PanelMenu.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.PanelMenu.Controls.Add(this.iconButton7);
+            this.PanelMenu.Controls.Add(this.AllChartButton);
             this.PanelMenu.Controls.Add(this.AdamsButton);
             this.PanelMenu.Controls.Add(this.MilnaButton);
             this.PanelMenu.Controls.Add(this.Runge_kuttaButton);
@@ -66,29 +67,30 @@
             this.PanelMenu.Size = new System.Drawing.Size(1131, 55);
             this.PanelMenu.TabIndex = 0;
             // 
-            // iconButton7
+            // AllChartButton
             // 
-            this.iconButton7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(36)))), ((int)(((byte)(81)))));
-            this.iconButton7.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.iconButton7.Cursor = System.Windows.Forms.Cursors.Default;
-            this.iconButton7.Dock = System.Windows.Forms.DockStyle.Left;
-            this.iconButton7.FlatAppearance.BorderSize = 2;
-            this.iconButton7.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.iconButton7.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.iconButton7.ForeColor = System.Drawing.Color.Black;
-            this.iconButton7.IconChar = FontAwesome.Sharp.IconChar.Expeditedssl;
-            this.iconButton7.IconColor = System.Drawing.Color.Black;
-            this.iconButton7.IconFont = FontAwesome.Sharp.IconFont.Brands;
-            this.iconButton7.IconSize = 40;
-            this.iconButton7.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.iconButton7.Location = new System.Drawing.Point(970, 0);
-            this.iconButton7.Name = "iconButton7";
-            this.iconButton7.Size = new System.Drawing.Size(161, 55);
-            this.iconButton7.TabIndex = 19;
-            this.iconButton7.Text = "Все графики";
-            this.iconButton7.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.iconButton7.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.iconButton7.UseVisualStyleBackColor = false;
+            this.AllChartButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(36)))), ((int)(((byte)(81)))));
+            this.AllChartButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.AllChartButton.Cursor = System.Windows.Forms.Cursors.Default;
+            this.AllChartButton.Dock = System.Windows.Forms.DockStyle.Left;
+            this.AllChartButton.FlatAppearance.BorderSize = 2;
+            this.AllChartButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.AllChartButton.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.AllChartButton.ForeColor = System.Drawing.Color.Black;
+            this.AllChartButton.IconChar = FontAwesome.Sharp.IconChar.Expeditedssl;
+            this.AllChartButton.IconColor = System.Drawing.Color.Black;
+            this.AllChartButton.IconFont = FontAwesome.Sharp.IconFont.Brands;
+            this.AllChartButton.IconSize = 40;
+            this.AllChartButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.AllChartButton.Location = new System.Drawing.Point(970, 0);
+            this.AllChartButton.Name = "AllChartButton";
+            this.AllChartButton.Size = new System.Drawing.Size(161, 55);
+            this.AllChartButton.TabIndex = 19;
+            this.AllChartButton.Text = "Все графики";
+            this.AllChartButton.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.AllChartButton.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.AllChartButton.UseVisualStyleBackColor = false;
+            this.AllChartButton.Click += new System.EventHandler(this.AllChartButton_Click);
             // 
             // AdamsButton
             // 
@@ -113,7 +115,7 @@
             this.AdamsButton.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.AdamsButton.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.AdamsButton.UseVisualStyleBackColor = false;
-            this.AdamsButton.Click += new System.EventHandler(this.iconButton6_Click);
+            this.AdamsButton.Click += new System.EventHandler(this.AdamsButton_Click);
             // 
             // MilnaButton
             // 
@@ -138,7 +140,7 @@
             this.MilnaButton.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.MilnaButton.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.MilnaButton.UseVisualStyleBackColor = false;
-            this.MilnaButton.Click += new System.EventHandler(this.iconButton5_Click);
+            this.MilnaButton.Click += new System.EventHandler(this.MilnaButton_Click);
             // 
             // Runge_kuttaButton
             // 
@@ -163,7 +165,7 @@
             this.Runge_kuttaButton.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.Runge_kuttaButton.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.Runge_kuttaButton.UseVisualStyleBackColor = false;
-            this.Runge_kuttaButton.Click += new System.EventHandler(this.iconButton4_Click);
+            this.Runge_kuttaButton.Click += new System.EventHandler(this.RubgeButton_Click);
             // 
             // Euler_recalButton
             // 
@@ -188,7 +190,7 @@
             this.Euler_recalButton.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.Euler_recalButton.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.Euler_recalButton.UseVisualStyleBackColor = false;
-            this.Euler_recalButton.Click += new System.EventHandler(this.iconButton3_Click);
+            this.Euler_recalButton.Click += new System.EventHandler(this.Euler_recalButton_Click);
             // 
             // ChordButton
             // 
@@ -213,7 +215,7 @@
             this.ChordButton.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.ChordButton.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.ChordButton.UseVisualStyleBackColor = false;
-            this.ChordButton.Click += new System.EventHandler(this.iconButton2_Click);
+            this.ChordButton.Click += new System.EventHandler(this.ChordButton_Click);
             // 
             // EulerButton
             // 
@@ -243,8 +245,9 @@
             // PanelResult
             // 
             this.PanelResult.BackColor = System.Drawing.Color.DarkGoldenrod;
-            this.PanelResult.Controls.Add(this.Chart);
-            this.PanelResult.Controls.Add(this.dataGridView1);
+            this.PanelResult.Controls.Add(this.MessageSelectLabel);
+            this.PanelResult.Controls.Add(this.ResultChart);
+            this.PanelResult.Controls.Add(this.ResultDataGridView);
             this.PanelResult.Dock = System.Windows.Forms.DockStyle.Fill;
             this.PanelResult.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.PanelResult.Location = new System.Drawing.Point(0, 55);
@@ -252,37 +255,39 @@
             this.PanelResult.Size = new System.Drawing.Size(1131, 491);
             this.PanelResult.TabIndex = 1;
             // 
-            // Chart
+            // ResultChart
             // 
-            this.Chart.BackColor = System.Drawing.Color.Wheat;
-            chartArea1.Name = "ChartArea1";
-            this.Chart.ChartAreas.Add(chartArea1);
-            this.Chart.Location = new System.Drawing.Point(452, 74);
-            this.Chart.Name = "Chart";
-            this.Chart.Size = new System.Drawing.Size(620, 343);
-            this.Chart.TabIndex = 16;
-            this.Chart.Text = "chart1";
-            title1.BackColor = System.Drawing.Color.Transparent;
-            title1.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            title1.Name = "Title1";
-            this.Chart.Titles.Add(title1);
+            this.ResultChart.BackColor = System.Drawing.Color.Wheat;
+            chartArea2.Name = "ChartArea1";
+            this.ResultChart.ChartAreas.Add(chartArea2);
+            this.ResultChart.Location = new System.Drawing.Point(453, 74);
+            this.ResultChart.Name = "ResultChart";
+            this.ResultChart.Size = new System.Drawing.Size(619, 343);
+            this.ResultChart.TabIndex = 16;
+            this.ResultChart.Text = "chart1";
+            title2.BackColor = System.Drawing.Color.Transparent;
+            title2.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            title2.Name = "Title1";
+            this.ResultChart.Titles.Add(title2);
+            this.ResultChart.Visible = false;
             // 
-            // dataGridView1
+            // ResultDataGridView
             // 
-            this.dataGridView1.AllowUserToAddRows = false;
-            this.dataGridView1.AllowUserToDeleteRows = false;
-            this.dataGridView1.BackgroundColor = System.Drawing.Color.Wheat;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.ResultDataGridView.AllowUserToAddRows = false;
+            this.ResultDataGridView.AllowUserToDeleteRows = false;
+            this.ResultDataGridView.BackgroundColor = System.Drawing.Color.Wheat;
+            this.ResultDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.ResultDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.i,
             this.X,
             this.Y});
-            this.dataGridView1.GridColor = System.Drawing.SystemColors.Control;
-            this.dataGridView1.Location = new System.Drawing.Point(59, 74);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.ReadOnly = true;
-            this.dataGridView1.Size = new System.Drawing.Size(263, 343);
-            this.dataGridView1.TabIndex = 15;
+            this.ResultDataGridView.GridColor = System.Drawing.SystemColors.Control;
+            this.ResultDataGridView.Location = new System.Drawing.Point(59, 74);
+            this.ResultDataGridView.Name = "ResultDataGridView";
+            this.ResultDataGridView.ReadOnly = true;
+            this.ResultDataGridView.Size = new System.Drawing.Size(263, 343);
+            this.ResultDataGridView.TabIndex = 15;
+            this.ResultDataGridView.Visible = false;
             // 
             // i
             // 
@@ -308,6 +313,18 @@
             this.Y.ReadOnly = true;
             this.Y.Width = 85;
             // 
+            // MessageSelectLabel
+            // 
+            this.MessageSelectLabel.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.MessageSelectLabel.AutoSize = true;
+            this.MessageSelectLabel.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.MessageSelectLabel.Location = new System.Drawing.Point(320, 192);
+            this.MessageSelectLabel.Name = "MessageSelectLabel";
+            this.MessageSelectLabel.Size = new System.Drawing.Size(484, 23);
+            this.MessageSelectLabel.TabIndex = 17;
+            this.MessageSelectLabel.Text = "Выберите, результат какого метода хотели бы увидеть\r\n";
+            this.MessageSelectLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
             // ResultMainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -321,8 +338,9 @@
             this.Text = "ResultMainForm";
             this.PanelMenu.ResumeLayout(false);
             this.PanelResult.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.Chart)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            this.PanelResult.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.ResultChart)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ResultDataGridView)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -337,11 +355,12 @@
         private FontAwesome.Sharp.IconButton Runge_kuttaButton;
         private FontAwesome.Sharp.IconButton Euler_recalButton;
         private FontAwesome.Sharp.IconButton ChordButton;
-        private FontAwesome.Sharp.IconButton iconButton7;
-        protected internal System.Windows.Forms.DataVisualization.Charting.Chart Chart;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private FontAwesome.Sharp.IconButton AllChartButton;
+        protected internal System.Windows.Forms.DataVisualization.Charting.Chart ResultChart;
+        private System.Windows.Forms.DataGridView ResultDataGridView;
         private System.Windows.Forms.DataGridViewTextBoxColumn i;
         private System.Windows.Forms.DataGridViewTextBoxColumn X;
         private System.Windows.Forms.DataGridViewTextBoxColumn Y;
+        private System.Windows.Forms.Label MessageSelectLabel;
     }
 }
