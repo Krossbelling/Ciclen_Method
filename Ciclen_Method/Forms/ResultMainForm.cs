@@ -19,7 +19,7 @@ namespace Ciclen_Method.Forms
         private Panel leftBorderBtn;
         private System.Windows.Forms.Form currentChildForm;
         private Control currentChildControl;
-        private static bool allchart = false;
+        private static bool allchart;
         public ResultMainForm()
         {
             InitializeComponent();
@@ -27,10 +27,9 @@ namespace Ciclen_Method.Forms
             leftBorderBtn.Size = new Size(1126, 47);
             PanelMenu.Controls.Add(leftBorderBtn);
 
-            
             // currentBtn.BackColor = Color.FromArgb(37, 36, 81); 
             // currentBtn.BackColor = Color.FromArgb(153, 180, 209); - цвет фона
-
+            allchart = false; 
             if (MainForm.Eulerbox == true)
             {
                 EulerButton.BackColor = Color.FromArgb(153, 180, 209);
@@ -67,8 +66,8 @@ namespace Ciclen_Method.Forms
                 AdamsButton.IconChar = IconChar.Faucet;
                 allchart = true;
             }
-            
-            if(allchart == true)
+
+            if (allchart == true)
             {
                 AllChartButton.BackColor = Color.FromArgb(153, 180, 209);
                 AllChartButton.IconChar = IconChar.Faucet;
@@ -76,7 +75,17 @@ namespace Ciclen_Method.Forms
 
             // Заменить на линк. Если объект true значит 
 
-            // Chart chart = new Chart();
+            // var methodbox = new List<bool>{ MainForm.Eulerbox, MainForm.Chordbox, MainForm.Euler_recalbox, MainForm.Runge_kuttabox, MainForm.Milnabox, MainForm.Adamsbox };
+
+            //bool[] methodbox = { MainForm.Eulerbox, MainForm.Chordbox, MainForm.Euler_recalbox, MainForm.Runge_kuttabox, MainForm.Milnabox, MainForm.Adamsbox };
+            //var newmethodbox = methodbox.Select(x => x.ToString().Contains("True"));
+            //foreach(var s in newmethodbox)
+            //{
+            //    BackColor =  Color.FromArgb(153, 180, 209);
+            //    IconChar IconChar = IconChar.Faucet;
+
+            //}
+
 
         }
         
@@ -177,9 +186,9 @@ namespace Ciclen_Method.Forms
                     ChartType = SeriesChartType.Line,                    
                     
                 };
-                for (int i = 0; i < MainForm.N; i++)
+                for (int i = 0; i < MainForm.N+1; i++)
                 {
-                    ResultDataGridView.Rows.Add(i + 1, MainForm.x[i], Math.Round(MainForm.y[i], MainForm.eps));
+                    ResultDataGridView.Rows.Add(i, MainForm.x[i], Math.Round(MainForm.y[i], MainForm.eps));
                     seriesOfPoint.Points.AddXY(MainForm.x[i], Math.Round(MainForm.y[i], MainForm.eps));
                 }
                 ResultChart.Series.Add(seriesOfPoint);

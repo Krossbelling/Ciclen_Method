@@ -102,11 +102,11 @@
             this.label10.ForeColor = System.Drawing.SystemColors.ControlText;
             this.label10.Location = new System.Drawing.Point(6, 25);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(292, 126);
+            this.label10.Size = new System.Drawing.Size(277, 126);
             this.label10.TabIndex = 16;
-            this.label10.Text = "pi           - Значение величины Pi\r\nsin(x)     - Синус x\r\nexp(x)    - Экспонента" +
-    " в степени x \r\nabs(x)     - Модуль x \r\nsqrt(x)    - Квадратный корень из х \r\npow" +
-    "(x,y) - Возвести x в степень y";
+            this.label10.Text = "pi - Значение величины Pi\r\nsin(x) - Синус x\r\nexp(x) - Экспонента в степени x \r\nab" +
+    "s(x) - Модуль x \r\nsqrt(x) - Квадратный корень из х \r\npow(x,y) - Возвести x в сте" +
+    "пень y";
             // 
             // label1
             // 

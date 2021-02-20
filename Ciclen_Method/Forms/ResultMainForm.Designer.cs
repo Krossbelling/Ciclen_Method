@@ -28,8 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea2 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Title title2 = new System.Windows.Forms.DataVisualization.Charting.Title();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea3 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Title title3 = new System.Windows.Forms.DataVisualization.Charting.Title();
             this.PanelMenu = new System.Windows.Forms.Panel();
             this.AllChartButton = new FontAwesome.Sharp.IconButton();
             this.AdamsButton = new FontAwesome.Sharp.IconButton();
@@ -39,12 +39,12 @@
             this.ChordButton = new FontAwesome.Sharp.IconButton();
             this.EulerButton = new FontAwesome.Sharp.IconButton();
             this.PanelResult = new System.Windows.Forms.Panel();
+            this.MessageSelectLabel = new System.Windows.Forms.Label();
             this.ResultChart = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.ResultDataGridView = new System.Windows.Forms.DataGridView();
             this.i = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.X = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Y = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.MessageSelectLabel = new System.Windows.Forms.Label();
             this.PanelMenu.SuspendLayout();
             this.PanelResult.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ResultChart)).BeginInit();
@@ -255,20 +255,32 @@
             this.PanelResult.Size = new System.Drawing.Size(1131, 491);
             this.PanelResult.TabIndex = 1;
             // 
+            // MessageSelectLabel
+            // 
+            this.MessageSelectLabel.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.MessageSelectLabel.AutoSize = true;
+            this.MessageSelectLabel.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.MessageSelectLabel.Location = new System.Drawing.Point(320, 192);
+            this.MessageSelectLabel.Name = "MessageSelectLabel";
+            this.MessageSelectLabel.Size = new System.Drawing.Size(484, 23);
+            this.MessageSelectLabel.TabIndex = 17;
+            this.MessageSelectLabel.Text = "Выберите, результат какого метода хотели бы увидеть\r\n";
+            this.MessageSelectLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
             // ResultChart
             // 
             this.ResultChart.BackColor = System.Drawing.Color.Wheat;
-            chartArea2.Name = "ChartArea1";
-            this.ResultChart.ChartAreas.Add(chartArea2);
+            chartArea3.Name = "ChartArea1";
+            this.ResultChart.ChartAreas.Add(chartArea3);
             this.ResultChart.Location = new System.Drawing.Point(453, 74);
             this.ResultChart.Name = "ResultChart";
             this.ResultChart.Size = new System.Drawing.Size(619, 343);
             this.ResultChart.TabIndex = 16;
             this.ResultChart.Text = "chart1";
-            title2.BackColor = System.Drawing.Color.Transparent;
-            title2.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            title2.Name = "Title1";
-            this.ResultChart.Titles.Add(title2);
+            title3.BackColor = System.Drawing.Color.Transparent;
+            title3.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            title3.Name = "Title1";
+            this.ResultChart.Titles.Add(title3);
             this.ResultChart.Visible = false;
             // 
             // ResultDataGridView
@@ -312,18 +324,6 @@
             this.Y.Name = "Y";
             this.Y.ReadOnly = true;
             this.Y.Width = 85;
-            // 
-            // MessageSelectLabel
-            // 
-            this.MessageSelectLabel.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.MessageSelectLabel.AutoSize = true;
-            this.MessageSelectLabel.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.MessageSelectLabel.Location = new System.Drawing.Point(320, 192);
-            this.MessageSelectLabel.Name = "MessageSelectLabel";
-            this.MessageSelectLabel.Size = new System.Drawing.Size(484, 23);
-            this.MessageSelectLabel.TabIndex = 17;
-            this.MessageSelectLabel.Text = "Выберите, результат какого метода хотели бы увидеть\r\n";
-            this.MessageSelectLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // ResultMainForm
             // 
