@@ -29,8 +29,6 @@ namespace Ciclen_Method.Forms
         }
         public ResultMainForm()
         {
-            // при загрузки этой формы понять какой cheken прожат и создать новый метод для расчёта?
-
             InitializeComponent();
             leftBorderBtn = new Panel();
             leftBorderBtn.Size = new Size(1126, 47);
@@ -40,41 +38,25 @@ namespace Ciclen_Method.Forms
             // currentBtn.BackColor = Color.FromArgb(153, 180, 209); - цвет фона
             allchart = false; 
             if (MainForm.Eulerbox == true)
-            {
-                ButtonColor(EulerButton);                
-            }
+                ButtonColor(EulerButton);  
 
             if (MainForm.Chordbox == true)
-            {
-                ButtonColor(ChordButton);                
-            }
+                ButtonColor(ChordButton);  
 
             if (MainForm.Euler_recalbox == true)
-            {
-                ButtonColor(Euler_recalButton);                
-            }
+                ButtonColor(Euler_recalButton);  
 
             if (MainForm.Runge_kuttabox == true)
-            {
-                ButtonColor(Runge_kuttaButton);                
-            }
+                ButtonColor(Runge_kuttaButton);  
 
             if (MainForm.Milnabox == true)
-            {
-                ButtonColor(MilnaButton);               
-            }
+                ButtonColor(MilnaButton);    
 
             if (MainForm.Adamsbox == true)
-            {
-                ButtonColor(AdamsButton);                
-            }
+                ButtonColor(AdamsButton);  
 
             if (allchart == true)
-            {
-                ButtonColor(AllChartButton);                
-            }
-
-
+                ButtonColor(AllChartButton);
 
 
         }
@@ -157,16 +139,15 @@ namespace Ciclen_Method.Forms
         {
             ResultDataGridView.Rows.Clear();
             ResultChart.Series.Clear();
+            ResultChart.Legends.Clear();
             ActivateButton(sender, RGBColors.color4);
             ResultChart.Location = new Point(453, 74);
             ResultChart.Size = new Size(619, 343);
-
-            ResultChart.Titles[0].Text = "Метод Эйлера";
-
+            ResultChart.Titles[0].Text = MethodName;
 
             Series seriesOfPoint = new Series()
             {
-                ChartType = SeriesChartType.Line,
+                ChartType = SeriesChartType.Line,                
 
             };
             for (int i = 0; i < MainForm.N + 1; i++)
@@ -231,13 +212,16 @@ namespace Ciclen_Method.Forms
         {
             Series seriesOfPoint = new Series()
             {
-                ChartType = SeriesChartType.Line,
+                Name = MethodName,
+                ChartType = SeriesChartType.Line,                
             };
             for (int i = 0; i < MainForm.N + 1; i++)
             {
                 seriesOfPoint.Points.AddXY(x[i], Math.Round(y[i], MainForm.eps));
             }
             ResultChart.Series.Add(seriesOfPoint);
+            ResultChart.Legends.Add(MethodName);
+
         }
         private void AllChartButton_Click(object sender, EventArgs e)
         {
@@ -245,6 +229,7 @@ namespace Ciclen_Method.Forms
             {                
                 ResultDataGridView.Rows.Clear();
                 ResultChart.Series.Clear();
+                ResultChart.Legends.Clear();
                 ActivateButton(sender, RGBColors.color4);
                 ResultDataGridView.Visible = false;
                 ResultChart.Titles[0].Text = "Все графики";
