@@ -29,6 +29,8 @@ namespace Ciclen_Method
         public static string uravn = "";
         public static double[] x;
         public static double[] y;
+        public static double[] xChord;
+        public static double[] yChord;
         public static bool Eulerbox;
         public static bool Chordbox;
         public static bool Euler_recalbox;
@@ -147,37 +149,13 @@ namespace Ciclen_Method
                 uravn = dif_textbox.Text;
                 x = new double[N+1];
                 y = new double[N+1];
-                //f = Parser.process(dif_textbox.Text);
+                
+                
 
                 if (EulerBox.Checked == true)
                 {
                     Eulerbox = true;
-                    Method_Eulers(a, b, x0, N, y0, eps, x, y);
-                    //MessageBox.Show($"{f}");
-
-                    //var column1 = new DataGridViewColumn();
-                    //column1.HeaderText = "X"; //текст в шапке
-                    //column1.Width = 100; //ширина колонки
-                    //column1.ReadOnly = true; //значение в этой колонке нельзя править
-                    //column1.Name = "x"; //текстовое имя колонки, его можно использовать вместо обращений по индексу
-                    //column1.Frozen = true; //флаг, что данная колонка всегда отображается на своем месте
-                    //column1.CellTemplate = new DataGridViewTextBoxCell(); //тип нашей колонки
-                    //dataGridView1.Columns.Add(column1);
-                    //var column2 = new DataGridViewColumn();
-                    //column2.HeaderText = "Y"; //текст в шапке
-                    //column2.Width = 100; //ширина колонки
-                    //column2.ReadOnly = true; //значение в этой колонке нельзя править
-                    //column2.Name = "y"; //текстовое имя колонки, его можно использовать вместо обращений по индексу
-                    //column2.Frozen = true; //флаг, что данная колонка всегда отображается на своем месте
-                    //column2.CellTemplate = new DataGridViewTextBoxCell(); //тип нашей колонки
-                    //dataGridView1.Columns.Add(column2);
-                    //dataGridView1.AllowUserToAddRows = false; //запрешаем пользователю самому добавлять строки
-
-                    //for (int i = 0; i < N; i++)
-                    //{
-                    //    //Добавляем строку, указывая значения колонок поочереди слева направо
-                    //   dataGridView1.Rows.Add(i, x[i], Math.Round(y[i], int.Parse(eps_textbox.Text)));
-                    //}
+                    Method_Eulers(a, b, x0, N, y0, eps, x, y);                    
 
                 }
                 if (ChordBox.Checked)
@@ -257,10 +235,31 @@ namespace Ciclen_Method
                 y[i] = y[i - 1] + h * f;
 
 
+
             }
         }
-        private static void Method_Chord(double a, double b, double x0, double N, double y0, double eps)
+        private static void Method_Chord(double a, double b, double x0, int N, double y0, double eps)
         {
+            xChord = new double[N + 1];
+            yChord = new double[N + 1];
+            double h = (b - a) / N;
+            xChord[0] = x0;
+            yChord[0] = y0;                        
+            double[] xpol = new double[N];
+            double[] ypol = new double[N];
+            double Fpol;
+            for (int i = 1; i < N+1; i++)
+            {
+                xChord[i] = xChord[0] + i * h;
+                f = Parser.process(xChord[i-1], yChord[i-1],uravn);
+                xpol[i-1] = xChord[i-1] + h / 2;
+                ypol[i-1] = yChord[i-1] + h / 2 * f;
+                Fpol = Parser.process(xpol[i-1], ypol[i-1], uravn);
+                yChord[i] = yChord[i-1] + h * Fpol;
+                               
+
+            }
+
 
         }
         private static void Method_Euler_recal(double a, double b, double x0, double N, double y0, double eps)
@@ -287,12 +286,6 @@ namespace Ciclen_Method
                 currentChildForm.Close();
                 Refresh();
             }                
-        }
-
-        
-    }
-
-    
-
-
+        }        
+    }    
 }

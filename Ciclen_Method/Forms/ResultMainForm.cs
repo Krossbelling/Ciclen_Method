@@ -20,8 +20,17 @@ namespace Ciclen_Method.Forms
         private System.Windows.Forms.Form currentChildForm;
         private Control currentChildControl;
         private static bool allchart;
+
+        private static void ButtonColor(IconButton iconButton)
+        {
+            iconButton.BackColor = Color.FromArgb(153, 180, 209);
+            iconButton.IconChar = IconChar.Faucet;
+            allchart = true;
+        }
         public ResultMainForm()
         {
+            // при загрузки этой формы понять какой cheken прожат и создать новый метод для расчёта?
+
             InitializeComponent();
             leftBorderBtn = new Panel();
             leftBorderBtn.Size = new Size(1126, 47);
@@ -32,63 +41,44 @@ namespace Ciclen_Method.Forms
             allchart = false; 
             if (MainForm.Eulerbox == true)
             {
-                EulerButton.BackColor = Color.FromArgb(153, 180, 209);
-                EulerButton.IconChar = IconChar.Faucet;
-                allchart = true;
+                ButtonColor(EulerButton);                
             }
+
             if (MainForm.Chordbox == true)
             {
-                ChordButton.BackColor = Color.FromArgb(153, 180, 209);
-                ChordButton.IconChar = IconChar.Faucet;
-                allchart = true;
+                ButtonColor(ChordButton);                
             }
+
             if (MainForm.Euler_recalbox == true)
             {
-                Euler_recalButton.BackColor = Color.FromArgb(153, 180, 209);
-                Euler_recalButton.IconChar = IconChar.Faucet;
-                allchart = true;
+                ButtonColor(Euler_recalButton);                
             }
+
             if (MainForm.Runge_kuttabox == true)
             {
-                Runge_kuttaButton.BackColor = Color.FromArgb(153, 180, 209);
-                Runge_kuttaButton.IconChar = IconChar.Faucet;
-                allchart = true;
+                ButtonColor(Runge_kuttaButton);                
             }
+
             if (MainForm.Milnabox == true)
             {
-                MilnaButton.BackColor = Color.FromArgb(153, 180, 209);
-                MilnaButton.IconChar = IconChar.Faucet;
-                allchart = true;
+                ButtonColor(MilnaButton);               
             }
+
             if (MainForm.Adamsbox == true)
             {
-                AdamsButton.BackColor = Color.FromArgb(153, 180, 209);
-                AdamsButton.IconChar = IconChar.Faucet;
-                allchart = true;
+                ButtonColor(AdamsButton);                
             }
 
             if (allchart == true)
             {
-                AllChartButton.BackColor = Color.FromArgb(153, 180, 209);
-                AllChartButton.IconChar = IconChar.Faucet;
+                ButtonColor(AllChartButton);                
             }
 
-            // Заменить на линк. Если объект true значит 
 
-            // var methodbox = new List<bool>{ MainForm.Eulerbox, MainForm.Chordbox, MainForm.Euler_recalbox, MainForm.Runge_kuttabox, MainForm.Milnabox, MainForm.Adamsbox };
-
-            //bool[] methodbox = { MainForm.Eulerbox, MainForm.Chordbox, MainForm.Euler_recalbox, MainForm.Runge_kuttabox, MainForm.Milnabox, MainForm.Adamsbox };
-            //var newmethodbox = methodbox.Select(x => x.ToString().Contains("True"));
-            //foreach(var s in newmethodbox)
-            //{
-            //    BackColor =  Color.FromArgb(153, 180, 209);
-            //    IconChar IconChar = IconChar.Faucet;
-
-            //}
 
 
         }
-        
+
         private struct RGBColors
         {
             public static Color color1 = Color.FromArgb(172, 126, 241 );
@@ -174,10 +164,6 @@ namespace Ciclen_Method.Forms
                 ResultChart.Location = new Point(453, 74);
                 ResultChart.Size = new Size(619, 343);
 
-                // OpenChildForm(new ResultDesktopChar());
-                // OpenChildControl(new Use());
-
-                // Chart.Titles.Add("Метод Эйлера");
                 ResultChart.Titles[0].Text = "Метод Эйлера";
                 
 
@@ -207,6 +193,16 @@ namespace Ciclen_Method.Forms
                 ResultChart.Location = new Point(453, 74);
                 ResultChart.Size = new Size(619, 343);
                 ResultChart.Titles[0].Text = "Метод Хорд";
+                Series seriesOfPoint = new Series()
+                {
+                    ChartType = SeriesChartType.Line,
+                };
+                for (int i = 0; i < MainForm.N + 1; i++)
+                {
+                    ResultDataGridView.Rows.Add(i, MainForm.xChord[i], Math.Round(MainForm.yChord[i], MainForm.eps));
+                    seriesOfPoint.Points.AddXY(MainForm.xChord[i], Math.Round(MainForm.yChord[i], MainForm.eps));
+                }
+                ResultChart.Series.Add(seriesOfPoint);
             }                        
         }
 
@@ -273,16 +269,53 @@ namespace Ciclen_Method.Forms
                 ResultChart.Titles[0].Text = "Все графики";
                 ResultChart.Location = new Point(59, 74);
                 ResultChart.Size = new Size(1000,400);
-                Series seriesOfPoint = new Series()
+                                                                             
+                if (MainForm.Eulerbox == true)
                 {
-                    ChartType = SeriesChartType.Line,
-                    
-                };
-                for (int i = 0; i < MainForm.N; i++)
-                {                    
-                    seriesOfPoint.Points.AddXY(MainForm.x[i], Math.Round(MainForm.y[i], MainForm.eps));
+                    Series seriesOfPoint = new Series()
+                    {
+                        ChartType = SeriesChartType.Line,
+                    };
+                    for (int i = 0; i < MainForm.N + 1; i++)
+                    {
+                        seriesOfPoint.Points.AddXY(MainForm.x[i], Math.Round(MainForm.y[i], MainForm.eps));
+                    }
+                    ResultChart.Series.Add(seriesOfPoint);
                 }
-                ResultChart.Series.Add(seriesOfPoint);
+
+                if (MainForm.Chordbox == true)
+                {
+                    Series seriesOfPoint2 = new Series()
+                    {
+                        ChartType = SeriesChartType.Line,
+
+                    };
+                    for (int i = 0; i < MainForm.N + 1; i++)
+                    {
+                        seriesOfPoint2.Points.AddXY(MainForm.xChord[i], Math.Round(MainForm.yChord[i], MainForm.eps));
+                    }
+                    ResultChart.Series.Add(seriesOfPoint2);
+                }
+
+                if (MainForm.Euler_recalbox == true)
+                {
+
+                }
+
+                if (MainForm.Runge_kuttabox == true)
+                {
+
+                }
+
+                if (MainForm.Milnabox == true)
+                {
+
+                }
+
+                if (MainForm.Adamsbox == true)
+                {
+
+                }
             }
         }
     }
