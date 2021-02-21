@@ -28,13 +28,14 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea3 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Title title3 = new System.Windows.Forms.DataVisualization.Charting.Title();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea4 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Title title4 = new System.Windows.Forms.DataVisualization.Charting.Title();
             this.PanelMenu = new System.Windows.Forms.Panel();
             this.AllChartButton = new FontAwesome.Sharp.IconButton();
-            this.AdamsButton = new FontAwesome.Sharp.IconButton();
+            this.AdemsButton = new FontAwesome.Sharp.IconButton();
             this.MilnaButton = new FontAwesome.Sharp.IconButton();
             this.Runge_kuttaButton = new FontAwesome.Sharp.IconButton();
+            this.IterButton = new FontAwesome.Sharp.IconButton();
             this.Euler_recalButton = new FontAwesome.Sharp.IconButton();
             this.ChordButton = new FontAwesome.Sharp.IconButton();
             this.EulerButton = new FontAwesome.Sharp.IconButton();
@@ -55,16 +56,17 @@
             // 
             this.PanelMenu.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.PanelMenu.Controls.Add(this.AllChartButton);
-            this.PanelMenu.Controls.Add(this.AdamsButton);
+            this.PanelMenu.Controls.Add(this.AdemsButton);
             this.PanelMenu.Controls.Add(this.MilnaButton);
             this.PanelMenu.Controls.Add(this.Runge_kuttaButton);
+            this.PanelMenu.Controls.Add(this.IterButton);
             this.PanelMenu.Controls.Add(this.Euler_recalButton);
             this.PanelMenu.Controls.Add(this.ChordButton);
             this.PanelMenu.Controls.Add(this.EulerButton);
             this.PanelMenu.Dock = System.Windows.Forms.DockStyle.Top;
             this.PanelMenu.Location = new System.Drawing.Point(0, 0);
             this.PanelMenu.Name = "PanelMenu";
-            this.PanelMenu.Size = new System.Drawing.Size(1131, 55);
+            this.PanelMenu.Size = new System.Drawing.Size(1151, 64);
             this.PanelMenu.TabIndex = 0;
             // 
             // AllChartButton
@@ -82,40 +84,40 @@
             this.AllChartButton.IconFont = FontAwesome.Sharp.IconFont.Brands;
             this.AllChartButton.IconSize = 40;
             this.AllChartButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.AllChartButton.Location = new System.Drawing.Point(970, 0);
+            this.AllChartButton.Location = new System.Drawing.Point(1007, 0);
             this.AllChartButton.Name = "AllChartButton";
-            this.AllChartButton.Size = new System.Drawing.Size(161, 55);
-            this.AllChartButton.TabIndex = 19;
+            this.AllChartButton.Size = new System.Drawing.Size(144, 64);
+            this.AllChartButton.TabIndex = 16;
             this.AllChartButton.Text = "Все графики";
             this.AllChartButton.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.AllChartButton.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.AllChartButton.UseVisualStyleBackColor = false;
             this.AllChartButton.Click += new System.EventHandler(this.AllChartButton_Click);
             // 
-            // AdamsButton
+            // AdemsButton
             // 
-            this.AdamsButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(36)))), ((int)(((byte)(81)))));
-            this.AdamsButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.AdamsButton.Cursor = System.Windows.Forms.Cursors.Default;
-            this.AdamsButton.Dock = System.Windows.Forms.DockStyle.Left;
-            this.AdamsButton.FlatAppearance.BorderSize = 2;
-            this.AdamsButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.AdamsButton.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.AdamsButton.ForeColor = System.Drawing.Color.Black;
-            this.AdamsButton.IconChar = FontAwesome.Sharp.IconChar.Expeditedssl;
-            this.AdamsButton.IconColor = System.Drawing.Color.Black;
-            this.AdamsButton.IconFont = FontAwesome.Sharp.IconFont.Brands;
-            this.AdamsButton.IconSize = 40;
-            this.AdamsButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.AdamsButton.Location = new System.Drawing.Point(810, 0);
-            this.AdamsButton.Name = "AdamsButton";
-            this.AdamsButton.Size = new System.Drawing.Size(160, 55);
-            this.AdamsButton.TabIndex = 18;
-            this.AdamsButton.Text = "Метод Адемса";
-            this.AdamsButton.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.AdamsButton.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.AdamsButton.UseVisualStyleBackColor = false;
-            this.AdamsButton.Click += new System.EventHandler(this.AdamsButton_Click);
+            this.AdemsButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(36)))), ((int)(((byte)(81)))));
+            this.AdemsButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.AdemsButton.Cursor = System.Windows.Forms.Cursors.Default;
+            this.AdemsButton.Dock = System.Windows.Forms.DockStyle.Left;
+            this.AdemsButton.FlatAppearance.BorderSize = 2;
+            this.AdemsButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.AdemsButton.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.AdemsButton.ForeColor = System.Drawing.Color.Black;
+            this.AdemsButton.IconChar = FontAwesome.Sharp.IconChar.Expeditedssl;
+            this.AdemsButton.IconColor = System.Drawing.Color.Black;
+            this.AdemsButton.IconFont = FontAwesome.Sharp.IconFont.Brands;
+            this.AdemsButton.IconSize = 40;
+            this.AdemsButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.AdemsButton.Location = new System.Drawing.Point(864, 0);
+            this.AdemsButton.Name = "AdemsButton";
+            this.AdemsButton.Size = new System.Drawing.Size(143, 64);
+            this.AdemsButton.TabIndex = 17;
+            this.AdemsButton.Text = "Метод Адемса";
+            this.AdemsButton.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.AdemsButton.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.AdemsButton.UseVisualStyleBackColor = false;
+            this.AdemsButton.Click += new System.EventHandler(this.AdamsButton_Click);
             // 
             // MilnaButton
             // 
@@ -132,10 +134,10 @@
             this.MilnaButton.IconFont = FontAwesome.Sharp.IconFont.Brands;
             this.MilnaButton.IconSize = 40;
             this.MilnaButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.MilnaButton.Location = new System.Drawing.Point(648, 0);
+            this.MilnaButton.Location = new System.Drawing.Point(722, 0);
             this.MilnaButton.Name = "MilnaButton";
-            this.MilnaButton.Size = new System.Drawing.Size(162, 55);
-            this.MilnaButton.TabIndex = 17;
+            this.MilnaButton.Size = new System.Drawing.Size(142, 64);
+            this.MilnaButton.TabIndex = 19;
             this.MilnaButton.Text = "Метод Милна";
             this.MilnaButton.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.MilnaButton.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
@@ -157,15 +159,40 @@
             this.Runge_kuttaButton.IconFont = FontAwesome.Sharp.IconFont.Brands;
             this.Runge_kuttaButton.IconSize = 40;
             this.Runge_kuttaButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.Runge_kuttaButton.Location = new System.Drawing.Point(486, 0);
+            this.Runge_kuttaButton.Location = new System.Drawing.Point(579, 0);
             this.Runge_kuttaButton.Name = "Runge_kuttaButton";
-            this.Runge_kuttaButton.Size = new System.Drawing.Size(162, 55);
-            this.Runge_kuttaButton.TabIndex = 16;
+            this.Runge_kuttaButton.Size = new System.Drawing.Size(143, 64);
+            this.Runge_kuttaButton.TabIndex = 18;
             this.Runge_kuttaButton.Text = "Метод Рунге кутта";
             this.Runge_kuttaButton.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.Runge_kuttaButton.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.Runge_kuttaButton.UseVisualStyleBackColor = false;
-            this.Runge_kuttaButton.Click += new System.EventHandler(this.RubgeButton_Click);
+            this.Runge_kuttaButton.Click += new System.EventHandler(this.RungeButton_Click);
+            // 
+            // IterButton
+            // 
+            this.IterButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(36)))), ((int)(((byte)(81)))));
+            this.IterButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.IterButton.Cursor = System.Windows.Forms.Cursors.Default;
+            this.IterButton.Dock = System.Windows.Forms.DockStyle.Left;
+            this.IterButton.FlatAppearance.BorderSize = 2;
+            this.IterButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.IterButton.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.IterButton.ForeColor = System.Drawing.Color.Black;
+            this.IterButton.IconChar = FontAwesome.Sharp.IconChar.Expeditedssl;
+            this.IterButton.IconColor = System.Drawing.Color.Black;
+            this.IterButton.IconFont = FontAwesome.Sharp.IconFont.Brands;
+            this.IterButton.IconSize = 40;
+            this.IterButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.IterButton.Location = new System.Drawing.Point(434, 0);
+            this.IterButton.Name = "IterButton";
+            this.IterButton.Size = new System.Drawing.Size(145, 64);
+            this.IterButton.TabIndex = 2;
+            this.IterButton.Text = "Метод с итерационной обработкой";
+            this.IterButton.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.IterButton.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.IterButton.UseVisualStyleBackColor = false;
+            this.IterButton.Click += new System.EventHandler(this.IterButton_Click);
             // 
             // Euler_recalButton
             // 
@@ -182,10 +209,10 @@
             this.Euler_recalButton.IconFont = FontAwesome.Sharp.IconFont.Brands;
             this.Euler_recalButton.IconSize = 40;
             this.Euler_recalButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.Euler_recalButton.Location = new System.Drawing.Point(324, 0);
+            this.Euler_recalButton.Location = new System.Drawing.Point(289, 0);
             this.Euler_recalButton.Name = "Euler_recalButton";
-            this.Euler_recalButton.Size = new System.Drawing.Size(162, 55);
-            this.Euler_recalButton.TabIndex = 15;
+            this.Euler_recalButton.Size = new System.Drawing.Size(145, 64);
+            this.Euler_recalButton.TabIndex = 1;
             this.Euler_recalButton.Text = "Метод Эйлера с пересчётом";
             this.Euler_recalButton.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.Euler_recalButton.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
@@ -207,9 +234,9 @@
             this.ChordButton.IconFont = FontAwesome.Sharp.IconFont.Brands;
             this.ChordButton.IconSize = 40;
             this.ChordButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.ChordButton.Location = new System.Drawing.Point(162, 0);
+            this.ChordButton.Location = new System.Drawing.Point(144, 0);
             this.ChordButton.Name = "ChordButton";
-            this.ChordButton.Size = new System.Drawing.Size(162, 55);
+            this.ChordButton.Size = new System.Drawing.Size(145, 64);
             this.ChordButton.TabIndex = 14;
             this.ChordButton.Text = "Метод Хорд";
             this.ChordButton.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -234,8 +261,8 @@
             this.EulerButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.EulerButton.Location = new System.Drawing.Point(0, 0);
             this.EulerButton.Name = "EulerButton";
-            this.EulerButton.Size = new System.Drawing.Size(162, 55);
-            this.EulerButton.TabIndex = 13;
+            this.EulerButton.Size = new System.Drawing.Size(144, 64);
+            this.EulerButton.TabIndex = 20;
             this.EulerButton.Text = "Метод Эйлера";
             this.EulerButton.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.EulerButton.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
@@ -250,17 +277,18 @@
             this.PanelResult.Controls.Add(this.ResultDataGridView);
             this.PanelResult.Dock = System.Windows.Forms.DockStyle.Fill;
             this.PanelResult.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.PanelResult.Location = new System.Drawing.Point(0, 55);
+            this.PanelResult.Location = new System.Drawing.Point(0, 64);
             this.PanelResult.Name = "PanelResult";
-            this.PanelResult.Size = new System.Drawing.Size(1131, 491);
+            this.PanelResult.Size = new System.Drawing.Size(1151, 482);
             this.PanelResult.TabIndex = 1;
+            this.PanelResult.Click += new System.EventHandler(this.RungeButton_Click);
             // 
             // MessageSelectLabel
             // 
             this.MessageSelectLabel.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.MessageSelectLabel.AutoSize = true;
             this.MessageSelectLabel.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.MessageSelectLabel.Location = new System.Drawing.Point(320, 192);
+            this.MessageSelectLabel.Location = new System.Drawing.Point(330, 188);
             this.MessageSelectLabel.Name = "MessageSelectLabel";
             this.MessageSelectLabel.Size = new System.Drawing.Size(484, 23);
             this.MessageSelectLabel.TabIndex = 17;
@@ -270,17 +298,17 @@
             // ResultChart
             // 
             this.ResultChart.BackColor = System.Drawing.Color.Wheat;
-            chartArea3.Name = "ChartArea1";
-            this.ResultChart.ChartAreas.Add(chartArea3);
+            chartArea4.Name = "ChartArea1";
+            this.ResultChart.ChartAreas.Add(chartArea4);
             this.ResultChart.Location = new System.Drawing.Point(453, 74);
             this.ResultChart.Name = "ResultChart";
             this.ResultChart.Size = new System.Drawing.Size(619, 343);
             this.ResultChart.TabIndex = 16;
             this.ResultChart.Text = "chart1";
-            title3.BackColor = System.Drawing.Color.Transparent;
-            title3.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            title3.Name = "Title1";
-            this.ResultChart.Titles.Add(title3);
+            title4.BackColor = System.Drawing.Color.Transparent;
+            title4.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            title4.Name = "Title1";
+            this.ResultChart.Titles.Add(title4);
             this.ResultChart.Visible = false;
             // 
             // ResultDataGridView
@@ -329,7 +357,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1131, 546);
+            this.ClientSize = new System.Drawing.Size(1151, 546);
             this.Controls.Add(this.PanelResult);
             this.Controls.Add(this.PanelMenu);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
@@ -349,18 +377,19 @@
 
         private System.Windows.Forms.Panel PanelMenu;
         private System.Windows.Forms.Panel PanelResult;
-        private FontAwesome.Sharp.IconButton EulerButton;
-        private FontAwesome.Sharp.IconButton AdamsButton;
-        private FontAwesome.Sharp.IconButton MilnaButton;
-        private FontAwesome.Sharp.IconButton Runge_kuttaButton;
         private FontAwesome.Sharp.IconButton Euler_recalButton;
+        private FontAwesome.Sharp.IconButton Runge_kuttaButton;
+        private FontAwesome.Sharp.IconButton AdemsButton;
+        private FontAwesome.Sharp.IconButton IterButton;
         private FontAwesome.Sharp.IconButton ChordButton;
-        private FontAwesome.Sharp.IconButton AllChartButton;
+        private FontAwesome.Sharp.IconButton MilnaButton;
         protected internal System.Windows.Forms.DataVisualization.Charting.Chart ResultChart;
         private System.Windows.Forms.DataGridView ResultDataGridView;
         private System.Windows.Forms.DataGridViewTextBoxColumn i;
         private System.Windows.Forms.DataGridViewTextBoxColumn X;
         private System.Windows.Forms.DataGridViewTextBoxColumn Y;
         private System.Windows.Forms.Label MessageSelectLabel;
+        private FontAwesome.Sharp.IconButton EulerButton;
+        private FontAwesome.Sharp.IconButton AllChartButton;
     }
 }

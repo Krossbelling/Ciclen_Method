@@ -44,7 +44,10 @@ namespace Ciclen_Method.Forms
                 ButtonColor(ChordButton);  
 
             if (MainForm.Euler_recalbox == true)
-                ButtonColor(Euler_recalButton);  
+                ButtonColor(Euler_recalButton);
+
+            if (MainForm.Itterbox == true)
+                ButtonColor(IterButton);
 
             if (MainForm.Runge_kuttabox == true)
                 ButtonColor(Runge_kuttaButton);  
@@ -53,7 +56,7 @@ namespace Ciclen_Method.Forms
                 ButtonColor(MilnaButton);    
 
             if (MainForm.Adamsbox == true)
-                ButtonColor(AdamsButton);  
+                ButtonColor(AdemsButton);  
 
             if (allchart == true)
                 ButtonColor(AllChartButton);
@@ -184,8 +187,15 @@ namespace Ciclen_Method.Forms
                 
             }                       
         }
+        private void IterButton_Click(object sender, EventArgs e)
+        {
+            if(MainForm.Itterbox == true)
+            {
+                // string MethodName = "Метод с итерационной обработкой";
+            }
+        }
 
-        private void RubgeButton_Click(object sender, EventArgs e)
+        private void RungeButton_Click(object sender, EventArgs e)
         {
             if (MainForm.Runge_kuttabox == true)
             {
@@ -206,8 +216,9 @@ namespace Ciclen_Method.Forms
             if (MainForm.Adamsbox == true)
             {
                 // string MethodName = "Метод Адемса";
-            }                        
+            }
         }
+        
         private void AddAllChart(string MethodName, double[] x, double[] y)
         {
             Series seriesOfPoint = new Series()
@@ -250,6 +261,10 @@ namespace Ciclen_Method.Forms
                 }
 
                 if (MainForm.Euler_recalbox == true)
+                {
+
+                }
+                if (MainForm.Itterbox == true)
                 {
 
                 }

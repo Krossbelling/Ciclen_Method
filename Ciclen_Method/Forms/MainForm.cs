@@ -31,9 +31,11 @@ namespace Ciclen_Method
         public static bool Eulerbox { get;set; }
         public static bool Chordbox { get; set; }
         public static bool Euler_recalbox { get; set; }
+        public static bool Itterbox { get; set; }
         public static bool Runge_kuttabox { get; set; }
         public static bool Milnabox { get; set; }
         public static bool Adamsbox { get; set; }
+        
         double x0 { get; set; }
         double y0 { get; set; }
         public MainForm()
@@ -66,6 +68,9 @@ namespace Ciclen_Method
 
             if (Euler_recalbox == true)
                 Euler_recalBox.Checked = true;
+
+            if (Itterbox == true)
+                ItterBox.Checked = true;
 
             if (Runge_kuttabox == true)
                 Runge_kuttaBox.Checked = true;
@@ -164,6 +169,11 @@ namespace Ciclen_Method
                     Euler_recalbox = true;
                     Method_Euler_recal(a, b, x0, N, y0);
                 }
+                if (ItterBox.Checked)
+                {
+                    Itterbox = true;
+                    Method_itter(a,b,x0,N,y0);
+                }                
                 if (Runge_kuttaBox.Checked)
                 {
                     Runge_kuttabox = true;
@@ -188,6 +198,9 @@ namespace Ciclen_Method
 
                 if (!Euler_recalBox.Checked)
                     Euler_recalbox = false;
+
+                if (!ItterBox.Checked)
+                    Itterbox = false;
 
                 if (!Runge_kuttaBox.Checked)
                     Runge_kuttabox = false;
@@ -248,6 +261,10 @@ namespace Ciclen_Method
 
         }
         private static void Method_Euler_recal(double a, double b, double x0, int N, double y0)
+        {
+
+        }
+        private static void Method_itter(double a, double b, double x0, int N, double y0)
         {
 
         }
