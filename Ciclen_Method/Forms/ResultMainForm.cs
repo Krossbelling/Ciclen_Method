@@ -254,7 +254,8 @@ namespace Ciclen_Method.Forms
                 if (MainForm.Eulerbox == true)
                 {
                     string MethodName = "Метод Эйлера";
-                    AddAllChart(MethodName, MainForm.x, MainForm.y);                    
+                    AddAllChart(MethodName, MainForm.x, MainForm.y);   
+                    
                 }
 
                 if (MainForm.Chordbox == true)
