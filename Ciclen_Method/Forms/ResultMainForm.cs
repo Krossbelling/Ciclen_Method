@@ -153,33 +153,36 @@ namespace Ciclen_Method.Forms
         }
 
 
-        private void EulerButton_Click(object sender, EventArgs e)
+        private void Data_output(string MethodName, double[] x, double[] y, int eps, object sender )
         {
-            
+            ResultDataGridView.Rows.Clear();
+            ResultChart.Series.Clear();
+            ActivateButton(sender, RGBColors.color4);
+            ResultChart.Location = new Point(453, 74);
+            ResultChart.Size = new Size(619, 343);
+
+            ResultChart.Titles[0].Text = "Метод Эйлера";
+
+
+            Series seriesOfPoint = new Series()
+            {
+                ChartType = SeriesChartType.Line,
+
+            };
+            for (int i = 0; i < MainForm.N + 1; i++)
+            {
+                ResultDataGridView.Rows.Add(i, x[i], Math.Round(y[i], eps));
+                seriesOfPoint.Points.AddXY(x[i], Math.Round(y[i], eps));
+            }
+            ResultChart.Series.Add(seriesOfPoint);
+        }
+
+        private void EulerButton_Click(object sender, EventArgs e)
+        {            
             if (MainForm.Eulerbox == true)
-            {                
-                ResultDataGridView.Rows.Clear();
-                ResultChart.Series.Clear();
-                ActivateButton(sender, RGBColors.color4);
-                ResultChart.Location = new Point(453, 74);
-                ResultChart.Size = new Size(619, 343);
-
-                ResultChart.Titles[0].Text = "Метод Эйлера";
-                
-
-                Series seriesOfPoint = new Series()
-                {
-                    ChartType = SeriesChartType.Line,                    
-                    
-                };
-                for (int i = 0; i < MainForm.N+1; i++)
-                {
-                    ResultDataGridView.Rows.Add(i, MainForm.x[i], Math.Round(MainForm.y[i], MainForm.eps));
-                    seriesOfPoint.Points.AddXY(MainForm.x[i], Math.Round(MainForm.y[i], MainForm.eps));
-                }
-                ResultChart.Series.Add(seriesOfPoint);
-
-
+            {
+                string MethodName = "Метод Эйлера";
+                Data_output(MethodName, MainForm.x, MainForm.y, MainForm.eps, sender);                
             }                       
         }
 
@@ -187,22 +190,8 @@ namespace Ciclen_Method.Forms
         {
             if (MainForm.Chordbox == true)
             {
-                ResultDataGridView.Rows.Clear();
-                ResultChart.Series.Clear();
-                ActivateButton(sender, RGBColors.color4);
-                ResultChart.Location = new Point(453, 74);
-                ResultChart.Size = new Size(619, 343);
-                ResultChart.Titles[0].Text = "Метод Хорд";
-                Series seriesOfPoint = new Series()
-                {
-                    ChartType = SeriesChartType.Line,
-                };
-                for (int i = 0; i < MainForm.N + 1; i++)
-                {
-                    ResultDataGridView.Rows.Add(i, MainForm.xChord[i], Math.Round(MainForm.yChord[i], MainForm.eps));
-                    seriesOfPoint.Points.AddXY(MainForm.xChord[i], Math.Round(MainForm.yChord[i], MainForm.eps));
-                }
-                ResultChart.Series.Add(seriesOfPoint);
+                string MethodName = "Метод Хорд";
+                Data_output(MethodName, MainForm.xChord, MainForm.yChord, MainForm.eps, sender);               
             }                        
         }
 
@@ -210,12 +199,8 @@ namespace Ciclen_Method.Forms
         {
             if (MainForm.Euler_recalbox == true)
             {
-                ResultDataGridView.Rows.Clear();
-                ResultChart.Series.Clear();
-                ActivateButton(sender, RGBColors.color4);
-                ResultChart.Location = new Point(453, 74);
-                ResultChart.Size = new Size(619, 343);
-                ResultChart.Titles[0].Text = "Метод Эйлера с пересчётом";
+                // string MethodName = "Метод Эйлера с пересчётом";
+                
             }                       
         }
 
@@ -223,12 +208,7 @@ namespace Ciclen_Method.Forms
         {
             if (MainForm.Runge_kuttabox == true)
             {
-                ResultDataGridView.Rows.Clear();
-                ResultChart.Series.Clear();
-                ActivateButton(sender, RGBColors.color4);
-                ResultChart.Location = new Point(453, 74);
-                ResultChart.Size = new Size(619, 343);
-                ResultChart.Titles[0].Text = "Метод Рунге - Кутта";
+                // string MethodName = "Метод Рунге-Кутта";
             }                       
         }
 
@@ -236,12 +216,7 @@ namespace Ciclen_Method.Forms
         {
             if (MainForm.Milnabox == true)
             {
-                ResultDataGridView.Rows.Clear();
-                ResultChart.Series.Clear();
-                ActivateButton(sender, RGBColors.color4);
-                ResultChart.Location = new Point(453, 74);
-                ResultChart.Size = new Size(619, 343);
-                ResultChart.Titles[0].Text = "Метод Милна";
+                // string MethodName = "Метод Милна";
             }                      
         }
 
@@ -249,15 +224,21 @@ namespace Ciclen_Method.Forms
         {
             if (MainForm.Adamsbox == true)
             {
-                ResultDataGridView.Rows.Clear();
-                ResultChart.Series.Clear();
-                ResultChart.Location = new Point(453, 74);
-                ResultChart.Size = new Size(619, 343);
-                ActivateButton(sender, RGBColors.color4);
-                ResultChart.Titles[0].Text = "Метод Адемса";
+                // string MethodName = "Метод Адемса";
             }                        
         }
-
+        private void AddAllChart(string MethodName, double[] x, double[] y)
+        {
+            Series seriesOfPoint = new Series()
+            {
+                ChartType = SeriesChartType.Line,
+            };
+            for (int i = 0; i < MainForm.N + 1; i++)
+            {
+                seriesOfPoint.Points.AddXY(x[i], Math.Round(y[i], MainForm.eps));
+            }
+            ResultChart.Series.Add(seriesOfPoint);
+        }
         private void AllChartButton_Click(object sender, EventArgs e)
         {
             if (allchart == true)
@@ -272,29 +253,14 @@ namespace Ciclen_Method.Forms
                                                                              
                 if (MainForm.Eulerbox == true)
                 {
-                    Series seriesOfPoint = new Series()
-                    {
-                        ChartType = SeriesChartType.Line,
-                    };
-                    for (int i = 0; i < MainForm.N + 1; i++)
-                    {
-                        seriesOfPoint.Points.AddXY(MainForm.x[i], Math.Round(MainForm.y[i], MainForm.eps));
-                    }
-                    ResultChart.Series.Add(seriesOfPoint);
+                    string MethodName = "Метод Эйлера";
+                    AddAllChart(MethodName, MainForm.x, MainForm.y);                    
                 }
 
                 if (MainForm.Chordbox == true)
                 {
-                    Series seriesOfPoint2 = new Series()
-                    {
-                        ChartType = SeriesChartType.Line,
-
-                    };
-                    for (int i = 0; i < MainForm.N + 1; i++)
-                    {
-                        seriesOfPoint2.Points.AddXY(MainForm.xChord[i], Math.Round(MainForm.yChord[i], MainForm.eps));
-                    }
-                    ResultChart.Series.Add(seriesOfPoint2);
+                    string MethodName = "Метод Хорд";
+                    AddAllChart(MethodName, MainForm.xChord, MainForm.yChord);                    
                 }
 
                 if (MainForm.Euler_recalbox == true)

@@ -17,10 +17,7 @@ namespace Ciclen_Method
     public partial class MainForm : System.Windows.Forms.Form
 
     {
-        //private Button currentBtn;
-        //private Panel panel;
-        private System.Windows.Forms.Form currentChildForm;
-        // закруглённый button https://www.cyberforum.ru/post9872749.html
+        private System.Windows.Forms.Form currentChildForm;        
         public static double a;
         public static double b;        
         public static int N;
@@ -43,10 +40,10 @@ namespace Ciclen_Method
         {
             InitializeComponent();
 
-            this.Text = string.Empty;
-            this.ControlBox = false;
-            this.DoubleBuffered = true;
-            this.MaximizedBounds = Screen.FromHandle(this.Handle).WorkingArea;
+            Text = string.Empty;
+            ControlBox = false;
+            DoubleBuffered = true;
+            MaximizedBounds = Screen.FromHandle(Handle).WorkingArea;
 
             a_textbox.Text = a.ToString();
             b_textbox.Text = b.ToString();
@@ -89,7 +86,7 @@ namespace Ciclen_Method
         private void panelTitleBar_MouseDown(object sender, MouseEventArgs e)
         {
             ReleaseCapture();
-            SendMessage(this.Handle, 0x112, 0xf012, 0);
+            SendMessage(Handle, 0x112, 0xf012, 0);
         }
         private void OpenChildForm(System.Windows.Forms.Form childForm)
         {
@@ -211,12 +208,7 @@ namespace Ciclen_Method
                 MessageBox.Show("Решить не удалось" + ".\n " + exept.Message + "\n " + "Проверьте ввод данных:" + "\n " + "дифференциальное уравнение, a, b, x0, y0, N, eps.");
             }
         }
-        public static double F(double x, double y)
-        {
-
-            double F = y - x;
-            return F;
-        }
+        
         private static void Method_Eulers(double a, double b, double x0, double N, double y0, double eps, double[] x, double[] y)
         {
             double h = (b - a) / N;
@@ -226,16 +218,11 @@ namespace Ciclen_Method
             double FuncY;
             for (int i = 1; i < N+1; i++)
             {
-                x[i] = x[0] + i * h;
-                // y[i] = y[i - 1] + h * F(x[i - 1], y[i - 1]); 
+                x[i] = x[0] + i * h;                
                 FuncX = x[i - 1];
                 FuncY = y[i - 1];
-
                 f = Parser.process(FuncX, FuncY, uravn);
                 y[i] = y[i - 1] + h * f;
-
-
-
             }
         }
         private static void Method_Chord(double a, double b, double x0, int N, double y0, double eps)
@@ -255,11 +242,8 @@ namespace Ciclen_Method
                 xpol[i-1] = xChord[i-1] + h / 2;
                 ypol[i-1] = yChord[i-1] + h / 2 * f;
                 Fpol = Parser.process(xpol[i-1], ypol[i-1], uravn);
-                yChord[i] = yChord[i-1] + h * Fpol;
-                               
-
+                yChord[i] = yChord[i-1] + h * Fpol;                              
             }
-
 
         }
         private static void Method_Euler_recal(double a, double b, double x0, double N, double y0, double eps)
