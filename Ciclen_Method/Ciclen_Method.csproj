@@ -98,25 +98,25 @@
     <Compile Include="Forms\ResultMainForm.Designer.cs">
       <DependentUpon>ResultMainForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="MainForm.cs">
+    <Compile Include="Forms\MainForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="MainForm.Designer.cs">
+    <Compile Include="Forms\MainForm.Designer.cs">
       <DependentUpon>MainForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Parser.cs" />
-    <Compile Include="Program.cs" />
+    <Compile Include="Class\Parser.cs" />
+    <Compile Include="Class\Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="ResultControl.cs">
+    <Compile Include="UserControls\ResultControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="ResultControl.Designer.cs">
+    <Compile Include="UserControls\ResultControl.Designer.cs">
       <DependentUpon>ResultControl.cs</DependentUpon>
     </Compile>
     <EmbeddedResource Include="Forms\ResultMainForm.resx">
       <DependentUpon>ResultMainForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="MainForm.resx">
+    <EmbeddedResource Include="Forms\MainForm.resx">
       <DependentUpon>MainForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
@@ -129,10 +129,10 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
-    <EmbeddedResource Include="ResultControl.resx">
+    <EmbeddedResource Include="UserControls\ResultControl.resx">
       <DependentUpon>ResultControl.cs</DependentUpon>
     </EmbeddedResource>
-    <None Include="packages.config" />
+    <None Include="Config\packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -144,7 +144,7 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <None Include="App.config" />
+    <None Include="Config\App.config" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
