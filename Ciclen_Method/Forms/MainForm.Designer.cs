@@ -391,7 +391,7 @@
             this.panelTitleBar.Name = "panelTitleBar";
             this.panelTitleBar.Size = new System.Drawing.Size(1131, 51);
             this.panelTitleBar.TabIndex = 6;
-            this.panelTitleBar.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panelTitleBar_MouseDown);
+            this.panelTitleBar.MouseDown += new System.Windows.Forms.MouseEventHandler(this.PanelTitleBar_MouseDown);
             // 
             // BackButton
             // 
@@ -442,7 +442,7 @@
             this.Title_label.TabIndex = 0;
             this.Title_label.Text = "РЕШЕНИЕ ДИФФЕРЕНЦИАЛЬНОГО УРАВНЕНИЯ";
             this.Title_label.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.Title_label.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panelTitleBar_MouseDown);
+            this.Title_label.MouseDown += new System.Windows.Forms.MouseEventHandler(this.PanelTitleBar_MouseDown);
             // 
             // MainForm
             // 

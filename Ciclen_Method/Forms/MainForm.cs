@@ -18,24 +18,24 @@ namespace Ciclen_Method
 
     {
         private System.Windows.Forms.Form currentChildForm;        
-        public static double a;
-        public static double b;        
-        public static int N;
-        public static int eps;
-        static double f;
+        public static double a { get; set; }
+        public static double b { get; set; }
+        public static int N { get; set; }
+        public static int eps { get; set; }
+        static double f { get; set; }
         public static string uravn = "";
-        public static double[] x;
-        public static double[] y;
-        public static double[] xChord;
-        public static double[] yChord;
-        public static bool Eulerbox;
-        public static bool Chordbox;
-        public static bool Euler_recalbox;
-        public static bool Runge_kuttabox;
-        public static bool Milnabox;
-        public static bool Adamsbox;
-        double x0;
-        double y0;
+        public static double[] x { get; set; }
+        public static double[] y { get; set; }
+        public static double[] xChord { get; set; }
+        public static double[] yChord { get; set; }
+        public static bool Eulerbox { get;set; }
+        public static bool Chordbox { get; set; }
+        public static bool Euler_recalbox { get; set; }
+        public static bool Runge_kuttabox { get; set; }
+        public static bool Milnabox { get; set; }
+        public static bool Adamsbox { get; set; }
+        double x0 { get; set; }
+        double y0 { get; set; }
         public MainForm()
         {
             InitializeComponent();
@@ -83,7 +83,7 @@ namespace Ciclen_Method
         [DllImport("user32.DLL", EntryPoint = "SendMessage")]
         private extern static void SendMessage(System.IntPtr hWnd, int wMsg, int wParam, int lParam);
 
-        private void panelTitleBar_MouseDown(object sender, MouseEventArgs e)
+        private void PanelTitleBar_MouseDown(object sender, MouseEventArgs e)
         {
             ReleaseCapture();
             SendMessage(Handle, 0x112, 0xf012, 0);
@@ -144,41 +144,40 @@ namespace Ciclen_Method
                 N = int.Parse(N_numUpDown.Text);
                 eps = int.Parse(eps_textbox.Text);
                 uravn = dif_textbox.Text;
-                x = new double[N+1];
-                y = new double[N+1];
+                
                 
                 
 
                 if (EulerBox.Checked == true)
                 {
                     Eulerbox = true;
-                    Method_Eulers(a, b, x0, N, y0, eps, x, y);                    
+                    Method_Eulers(a, b, x0, N, y0);                    
 
                 }
                 if (ChordBox.Checked)
                 {
                     Chordbox = true;
-                    Method_Chord(a, b, x0, N, y0, eps);
+                    Method_Chord(a, b, x0, N, y0);
                 }
                 if (Euler_recalBox.Checked)
                 {
                     Euler_recalbox = true;
-                    Method_Euler_recal(a, b, x0, N, y0, eps);
+                    Method_Euler_recal(a, b, x0, N, y0);
                 }
                 if (Runge_kuttaBox.Checked)
                 {
                     Runge_kuttabox = true;
-                    Method_Runge_kutta(a, b, x0, N, y0, eps);
+                    Method_Runge_kutta(a, b, x0, N, y0);
                 }
                 if (MilnaBox.Checked)
                 {
                     Milnabox = true;
-                    Method_Milna(a, b, x0, N, y0, eps);
+                    Method_Milna(a, b, x0, N, y0);
                 }
                 if (AdamsBox.Checked)
                 {
                     Adamsbox = true;
-                    Method_Adams(a, b, x0, N, y0, eps);
+                    Method_Adams(a, b, x0, N, y0);
                 }
 
                 if (!EulerBox.Checked)
@@ -209,8 +208,10 @@ namespace Ciclen_Method
             }
         }
         
-        private static void Method_Eulers(double a, double b, double x0, double N, double y0, double eps, double[] x, double[] y)
+        private static void Method_Eulers(double a, double b, double x0, int N, double y0)
         {
+            x = new double[N + 1];
+            y = new double[N + 1];
             double h = (b - a) / N;
             x[0] = x0;
             y[0] = y0;
@@ -225,7 +226,7 @@ namespace Ciclen_Method
                 y[i] = y[i - 1] + h * f;
             }
         }
-        private static void Method_Chord(double a, double b, double x0, int N, double y0, double eps)
+        private static void Method_Chord(double a, double b, double x0, int N, double y0)
         {
             xChord = new double[N + 1];
             yChord = new double[N + 1];
@@ -246,19 +247,19 @@ namespace Ciclen_Method
             }
 
         }
-        private static void Method_Euler_recal(double a, double b, double x0, double N, double y0, double eps)
+        private static void Method_Euler_recal(double a, double b, double x0, int N, double y0)
         {
 
         }
-        private static void Method_Runge_kutta(double a, double b, double x0, double N, double y0, double eps)
+        private static void Method_Runge_kutta(double a, double b, double x0, int N, double y0)
         {
 
         }
-        private static void Method_Milna(double a, double b, double x0, double N, double y0, double eps)
+        private static void Method_Milna(double a, double b, double x0, int N, double y0)
         {
 
         }
-        private static void Method_Adams(double a, double b, double x0, double N, double y0, double eps)
+        private static void Method_Adams(double a, double b, double x0, int N, double y0)
         {
 
         }
