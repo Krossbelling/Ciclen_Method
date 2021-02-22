@@ -33,16 +33,19 @@ namespace Ciclen_Method.Forms
             leftBorderBtn = new Panel();
             leftBorderBtn.Size = new Size(1126, 47);
             PanelMenu.Controls.Add(leftBorderBtn);
-
+            // MainForm mainForm = new MainForm();
             // currentBtn.BackColor = Color.FromArgb(37, 36, 81); 
             // currentBtn.BackColor = Color.FromArgb(153, 180, 209); - цвет фона
-            allchart = false; 
+            allchart = false;
             if (MainForm.Eulerbox == true)
-                ButtonColor(EulerButton);  
+                ButtonColor(EulerButton);
+
+            //if (mainForm.EulerBox.Checked)
+            //    ButtonColor(EulerButton);
 
             if (MainForm.Chordbox == true)
                 ButtonColor(ChordButton);  
-
+            
             if (MainForm.Euler_recalbox == true)
                 ButtonColor(Euler_recalButton);
 

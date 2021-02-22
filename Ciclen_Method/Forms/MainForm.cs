@@ -123,7 +123,7 @@ namespace Ciclen_Method
         private void Number(object sender, KeyPressEventArgs e)// Разрешить вводить только цифры, символ backspace, запятую
         {
             char charCode = e.KeyChar;
-            if (!char.IsDigit(charCode) && charCode != 8 && charCode != 44)
+            if (!char.IsDigit(charCode) && charCode != 8 && charCode != 44 && charCode != 45)
                 e.Handled = true;
         }
         private void Solve_Click(object sender, EventArgs e)
@@ -160,6 +160,7 @@ namespace Ciclen_Method
                 if (EulerBox.Checked == true)
                 {
                     Eulerbox = true;
+                    // EulerBox.CheckState = unchecked(EulerBox.CheckState);
                     Method_Eulers(a, b, x0, N, y0);                    
 
                 }

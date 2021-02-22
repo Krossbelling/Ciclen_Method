@@ -52,6 +52,7 @@
             this.MethodGroupBox = new System.Windows.Forms.GroupBox();
             this.AdamsBox = new System.Windows.Forms.CheckBox();
             this.MilnaBox = new System.Windows.Forms.CheckBox();
+            this.ItterBox = new System.Windows.Forms.CheckBox();
             this.Runge_kuttaBox = new System.Windows.Forms.CheckBox();
             this.Euler_recalBox = new System.Windows.Forms.CheckBox();
             this.ChordBox = new System.Windows.Forms.CheckBox();
@@ -61,7 +62,6 @@
             this.BackButton = new System.Windows.Forms.Button();
             this.Out = new System.Windows.Forms.Button();
             this.Title_label = new System.Windows.Forms.Label();
-            this.ItterBox = new System.Windows.Forms.CheckBox();
             this.PanelDesktop.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.ParametrGroupBox.SuspendLayout();
@@ -332,6 +332,16 @@
             this.MilnaBox.Text = "Милна";
             this.MilnaBox.UseVisualStyleBackColor = true;
             // 
+            // ItterBox
+            // 
+            this.ItterBox.AutoSize = true;
+            this.ItterBox.Location = new System.Drawing.Point(19, 96);
+            this.ItterBox.Name = "ItterBox";
+            this.ItterBox.Size = new System.Drawing.Size(260, 25);
+            this.ItterBox.TabIndex = 0;
+            this.ItterBox.Text = "С итерационной обработкой";
+            this.ItterBox.UseVisualStyleBackColor = true;
+            // 
             // Runge_kuttaBox
             // 
             this.Runge_kuttaBox.AutoSize = true;
@@ -446,16 +456,6 @@
             this.Title_label.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.Title_label.MouseDown += new System.Windows.Forms.MouseEventHandler(this.PanelTitleBar_MouseDown);
             // 
-            // ItterBox
-            // 
-            this.ItterBox.AutoSize = true;
-            this.ItterBox.Location = new System.Drawing.Point(19, 96);
-            this.ItterBox.Name = "ItterBox";
-            this.ItterBox.Size = new System.Drawing.Size(260, 25);
-            this.ItterBox.TabIndex = 0;
-            this.ItterBox.Text = "С итерационной обработкой";
-            this.ItterBox.UseVisualStyleBackColor = true;
-            // 
             // MainForm
             // 
             this.AllowDrop = true;
@@ -516,10 +516,10 @@
         private System.Windows.Forms.CheckBox Euler_recalBox;
         private System.Windows.Forms.CheckBox ChordBox;
         protected internal System.Windows.Forms.TextBox dif_textbox;
-        protected internal System.Windows.Forms.CheckBox EulerBox;
         private System.Windows.Forms.Button BackButton;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.CheckBox ItterBox;
+        protected internal System.Windows.Forms.CheckBox EulerBox;
     }
 }
 
