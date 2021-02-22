@@ -138,7 +138,7 @@ namespace Ciclen_Method.Forms
         }
 
 
-        private void Data_output(string MethodName, double[] x, double[] y, int eps, object sender )
+        private void Data_output(string MethodName, double[] x, double[] y, object sender )
         {
             ResultDataGridView.Rows.Clear();
             ResultChart.Series.Clear();
@@ -155,8 +155,8 @@ namespace Ciclen_Method.Forms
             };
             for (int i = 0; i < MainForm.N + 1; i++)
             {
-                ResultDataGridView.Rows.Add(i, x[i], Math.Round(y[i], eps));
-                seriesOfPoint.Points.AddXY(x[i], Math.Round(y[i], eps));
+                ResultDataGridView.Rows.Add(i, x[i], Math.Round(y[i], MainForm.eps));
+                seriesOfPoint.Points.AddXY(x[i], Math.Round(y[i], MainForm.eps));
             }
             ResultChart.Series.Add(seriesOfPoint);
         }
@@ -166,7 +166,7 @@ namespace Ciclen_Method.Forms
             if (MainForm.Eulerbox == true)
             {
                 string MethodName = "Метод Эйлера";
-                Data_output(MethodName, MainForm.x, MainForm.y, MainForm.eps, sender);                
+                Data_output(MethodName, MainForm.x, MainForm.y, sender);                
             }                       
         }
 
@@ -175,7 +175,7 @@ namespace Ciclen_Method.Forms
             if (MainForm.Chordbox == true)
             {
                 string MethodName = "Метод Хорд";
-                Data_output(MethodName, MainForm.xChord, MainForm.yChord, MainForm.eps, sender);               
+                Data_output(MethodName, MainForm.xChord, MainForm.yChord, sender);               
             }                        
         }
 
@@ -183,8 +183,8 @@ namespace Ciclen_Method.Forms
         {
             if (MainForm.Euler_recalbox == true)
             {
-                // string MethodName = "Метод Эйлера с пересчётом";
-                
+                string MethodName = "Метод Эйлера с пересчётом";
+                Data_output(MethodName, MainForm.xEulerRecal, MainForm.yEulerRecal, sender);
             }                       
         }
         private void IterButton_Click(object sender, EventArgs e)
@@ -262,6 +262,8 @@ namespace Ciclen_Method.Forms
 
                 if (MainForm.Euler_recalbox == true)
                 {
+                    string MethodName = "Метод Эйлера с пересчётом";                    
+                    AddAllChart(MethodName, MainForm.xEulerRecal, MainForm.yEulerRecal);
 
                 }
                 if (MainForm.Itterbox == true)

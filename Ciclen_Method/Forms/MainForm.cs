@@ -28,6 +28,8 @@ namespace Ciclen_Method
         public static double[] y { get; set; }
         public static double[] xChord { get; set; }
         public static double[] yChord { get; set; }
+        public static double[] xEulerRecal { get; set; }
+        public static double[] yEulerRecal { get; set; }
         public static bool Eulerbox { get;set; }
         public static bool Chordbox { get; set; }
         public static bool Euler_recalbox { get; set; }
@@ -262,6 +264,23 @@ namespace Ciclen_Method
         }
         private static void Method_Euler_recal(double a, double b, double x0, int N, double y0)
         {
+
+            xEulerRecal = new double[N + 1];
+            yEulerRecal = new double[N + 1];
+            double h = (b - a) / N;
+            xEulerRecal[0] = x0;
+            yEulerRecal[0] = y0;
+            double[] ydash = new double[N+1];
+            double Fdash;
+            for (int i = 1; i < N + 1; i++)
+            {
+                xEulerRecal[i] = xEulerRecal[0] + i * h;
+                f = Parser.process(x[i-1], y[i - 1], uravn);
+                ydash[i] = y[i - 1] + h * f;
+                Fdash = Parser.process(x[i], ydash[i], uravn);
+                yEulerRecal[i] = yEulerRecal[i - 1] + h / 2 * (f+Fdash);
+
+            }
 
         }
         private static void Method_itter(double a, double b, double x0, int N, double y0)
