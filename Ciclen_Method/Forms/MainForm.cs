@@ -288,8 +288,31 @@ namespace Ciclen_Method
         }
         private static void Method_itter(double a, double b, double x0, int N, double y0)
         {
+            double epsion = 1 / Math.Pow(10, eps);
+            double h = (b - a) / N;
+            xIter = new double[N + 1];
+            yIter = new double[N + 1];
+            xIter[0] = x0;
+            yIter[0] = y0;
+            double[] ynull = new double[N + 1];
+            double fk;
+            int m = 0;
+            for (int i = 1; i < N + 1; i++)
+            {
+                xIter[i] = xIter[0] + i * h;
+                f = Parser.process(xIter[i - 1], yIter[i - 1], uravn);
+                ynull[0] = yIter[i-1] + h * f;                
+                do
+                {
+                    fk = Parser.process(xIter[m+1], ynull[m], uravn);
+                    ynull[m+1] = yIter[m] + h / 2 * (f + fk);
+                    m++;
+                } while (Math.Abs(ynull[m]-ynull[m-1]) <= epsion);
+                yIter[i] = ynull[m];
 
 
+            }        
+            
 
         }
         private static void Method_Runge_kutta(double a, double b, double x0, int N, double y0)

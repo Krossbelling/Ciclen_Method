@@ -194,7 +194,8 @@ namespace Ciclen_Method.Forms
         {
             if(MainForm.Itterbox == true)
             {
-                // string MethodName = "Метод с итерационной обработкой";
+                string MethodName = "Метод с итерационной обработкой";
+                Data_output(MethodName, MainForm.xIter, MainForm.yIter, sender);
             }
         }
 
@@ -271,7 +272,8 @@ namespace Ciclen_Method.Forms
                 }
                 if (MainForm.Itterbox == true)
                 {
-
+                    string MethodName = "Метод с итерационной обработкой";
+                    AddAllChart(MethodName, MainForm.xIter, MainForm.yIter);
                 }
 
                 if (MainForm.Runge_kuttabox == true)
