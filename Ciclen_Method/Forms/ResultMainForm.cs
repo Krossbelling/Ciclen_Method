@@ -26,6 +26,7 @@ namespace Ciclen_Method.Forms
             iconButton.BackColor = Color.FromArgb(153, 180, 209);
             iconButton.IconChar = IconChar.Faucet;
             allchart = true;
+            iconButton.Enabled = true;
         }
         public ResultMainForm()
         {

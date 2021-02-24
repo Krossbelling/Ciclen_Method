@@ -28,8 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea4 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Title title4 = new System.Windows.Forms.DataVisualization.Charting.Title();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Title title1 = new System.Windows.Forms.DataVisualization.Charting.Title();
             this.PanelMenu = new System.Windows.Forms.Panel();
             this.AllChartButton = new FontAwesome.Sharp.IconButton();
             this.AdemsButton = new FontAwesome.Sharp.IconButton();
@@ -298,17 +298,17 @@
             // ResultChart
             // 
             this.ResultChart.BackColor = System.Drawing.Color.Wheat;
-            chartArea4.Name = "ChartArea1";
-            this.ResultChart.ChartAreas.Add(chartArea4);
+            chartArea1.Name = "ChartArea1";
+            this.ResultChart.ChartAreas.Add(chartArea1);
             this.ResultChart.Location = new System.Drawing.Point(453, 74);
             this.ResultChart.Name = "ResultChart";
             this.ResultChart.Size = new System.Drawing.Size(619, 343);
             this.ResultChart.TabIndex = 16;
             this.ResultChart.Text = "chart1";
-            title4.BackColor = System.Drawing.Color.Transparent;
-            title4.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            title4.Name = "Title1";
-            this.ResultChart.Titles.Add(title4);
+            title1.BackColor = System.Drawing.Color.Transparent;
+            title1.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            title1.Name = "Title1";
+            this.ResultChart.Titles.Add(title1);
             this.ResultChart.Visible = false;
             // 
             // ResultDataGridView

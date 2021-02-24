@@ -303,11 +303,11 @@ namespace Ciclen_Method
                 f = Parser.process(xIter[i - 1], yIter[i - 1], uravn);
                 ynull[0] = yIter[i-1] + h * f;                
                 do
-                {
-                    fk = Parser.process(xIter[m+1], ynull[m], uravn);
+                {                    
+                    fk = Parser.process(xIter[m + 1], ynull[m], uravn);
                     ynull[m+1] = yIter[m] + h / 2 * (f + fk);
                     m++;
-                } while (Math.Abs(ynull[m]-ynull[m-1]) <= epsion);
+                } while (Math.Abs(ynull[m-1]-ynull[m]) <= epsion);
                 yIter[i] = ynull[m];
 
 
