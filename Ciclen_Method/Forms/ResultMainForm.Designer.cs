@@ -281,7 +281,6 @@
             this.PanelResult.Name = "PanelResult";
             this.PanelResult.Size = new System.Drawing.Size(1151, 482);
             this.PanelResult.TabIndex = 1;
-            this.PanelResult.Click += new System.EventHandler(this.RungeButton_Click);
             // 
             // MessageSelectLabel
             // 

@@ -32,6 +32,12 @@ namespace Ciclen_Method
         public static double[] yEulerRecal { get; set; }
         public static double[] xIter { get; set; }
         public static double[] yIter { get; set; }
+        public static double[] xRunge { get; set; }
+        public static double[] yRunge { get; set; }
+        public static double[] xMilna { get; set; }
+        public static double[] yMilna { get; set; }
+        public static double[] xAdems { get; set; }
+        public static double[] yAdems { get; set; }
         public static bool Eulerbox { get;set; }
         public static bool Chordbox { get; set; }
         public static bool Euler_recalbox { get; set; }
@@ -317,17 +323,81 @@ namespace Ciclen_Method
         }
         private static void Method_Runge_kutta(double a, double b, double x0, int N, double y0)
         {
+            yRunge = new double[N + 1];            
+            yRunge = SolveRungeKutt(a,b,x0,N,y0);
 
         }
+
+        public static double[] SolveRungeKutt(double a, double b, double x0, int N, double y0)
+        {
+            double h = (b - a) / N;
+            xRunge = new double[N + 1];
+            double[] y = new double[N + 1];
+            xRunge[0] = x0;
+            y[0] = y0;
+            int i = 1;
+            double k1, k2, k3, k4;
+            while (i < N + 1)
+            {
+                xRunge[i] = xRunge[0] + i * h;
+                k1 = Parser.process(xRunge[i - 1], y[i - 1], uravn);
+                k2 = Parser.process(xRunge[i - 1] + h / 2, y[i - 1] + h / 2 * k1, uravn);
+                k3 = Parser.process(xRunge[i - 1] + h / 2, y[i - 1] + h / 2 * k2, uravn);
+                k4 = Parser.process(xRunge[i - 1] + h, y[i - 1] + h * k3, uravn);
+                y[i] = y[i - 1] + h / 6 * (k1 + 2 * k2 + 2 * k3 + k4);
+                i++;
+            }
+            return y;
+
+        }
+
         private static void Method_Milna(double a, double b, double x0, int N, double y0)
         {
+            yMilna = new double[N + 1];
+            yMilna = SolveRungeKutt(a,b,x0,N,y0);
+            double h = (b - a) / N;
+            xMilna = new double[N + 1];
+            xMilna[0] = x0;            
+            int i = 4; double forecast, corr;
+            for (int j = 1; j < N + 1; j++)
+            {
+                xMilna[j] = xMilna[0] + j * h;
+            }
+            while (i < N + 1)
+            {
+                
+                forecast = yMilna[i - 4] + 4 * h / 3 * (2 * Parser.process(xMilna[i - 3], yMilna[i - 3], uravn) - Parser.process(xMilna[i - 2], yMilna[i - 2], uravn) + 2 * Parser.process(xMilna[i - 1], yMilna[i - 1], uravn));
+                corr = yMilna[i - 2] + h / 3 * (Parser.process(xMilna[i - 2], yMilna[i - 2], uravn) + 4 * Parser.process(xMilna[i - 1], yMilna[i - 1], uravn) + forecast);
+                if (forecast == corr)
+                    yMilna[i] = corr;
+                i++;
+            }
+
+
 
         }
         private static void Method_Adams(double a, double b, double x0, int N, double y0)
         {
-
+            double h = (b - a) / N;
+            yAdems = new double[N + 1];
+            yAdems = SolveRungeKutt(a, b, x0, N, y0);
+            int i = 3; double dy1, dy2, y_new;
+            xAdems = new double[N + 1];
+            xAdems[0] = x0;
+            for (int j = 1; j < N + 1; j++)
+            {
+                xAdems[j] = xAdems[0] + j * h;
+            }
+            while (i < N)
+            {
+                dy1 = h / 24 * (55 * Parser.process(xAdems[i], yAdems[i], uravn) - 59 * Parser.process(xAdems[i - 1], yAdems[i - 1], uravn) + 37 * Parser.process(xAdems[i - 2], yAdems[i - 2], uravn) - 9 * Parser.process(xAdems[i - 3], yAdems[i - 3], uravn));
+                y_new = yAdems[i] + dy1;
+                dy2 = h / 24 * (9 * y_new + 19 * Parser.process(xAdems[i], yAdems[i], uravn) - 5 * Parser.process(xAdems[i - 1], yAdems[i - 1], uravn) + Parser.process(xAdems[i - 2], yAdems[i - 2], uravn));
+                if (Math.Abs(dy2 - dy1) <= Math.Pow(10, -1 * eps))
+                    yAdems[i + 1] = yAdems[i] + dy2;
+                i++;
+            }
         }
-
         private void BackButton_Click(object sender, EventArgs e)
         {
             if (currentChildForm != null)

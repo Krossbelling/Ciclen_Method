@@ -98,7 +98,8 @@ namespace Ciclen_Method.Forms
                 leftBorderBtn.BackColor = color;
                 leftBorderBtn.Location = new Point(currentBtn.Location.X, 0);
                 leftBorderBtn.Visible = true;
-                // leftBorderBtn.BringToFront();
+                //leftBorderBtn.BringToFront();
+                
             }
         }
         private void DisableButton()
@@ -204,7 +205,8 @@ namespace Ciclen_Method.Forms
         {
             if (MainForm.Runge_kuttabox == true)
             {
-                // string MethodName = "Метод Рунге-Кутта";
+                string MethodName = "Метод Рунге-Кутта";
+                Data_output(MethodName, MainForm.xRunge, MainForm.yRunge, sender);
             }                       
         }
 
@@ -212,7 +214,8 @@ namespace Ciclen_Method.Forms
         {
             if (MainForm.Milnabox == true)
             {
-                // string MethodName = "Метод Милна";
+                string MethodName = "Метод Милна";
+                Data_output(MethodName, MainForm.xMilna, MainForm.yMilna, sender);
             }                      
         }
 
@@ -220,7 +223,8 @@ namespace Ciclen_Method.Forms
         {
             if (MainForm.Adamsbox == true)
             {
-                // string MethodName = "Метод Адемса";
+                string MethodName = "Метод Адемса";
+                Data_output(MethodName, MainForm.xAdems, MainForm.yAdems, sender);
             }
         }
         
@@ -279,17 +283,20 @@ namespace Ciclen_Method.Forms
 
                 if (MainForm.Runge_kuttabox == true)
                 {
-
+                    string MethodName = "Метод Рунге-Кутта";
+                    AddAllChart(MethodName, MainForm.xRunge, MainForm.yRunge);
                 }
 
                 if (MainForm.Milnabox == true)
                 {
-
+                    string MethodName = "Метод Милна";
+                    AddAllChart(MethodName, MainForm.xMilna, MainForm.yMilna);
                 }
 
                 if (MainForm.Adamsbox == true)
                 {
-
+                    string MethodName = "Метод Адемса";
+                    AddAllChart(MethodName, MainForm.xAdems, MainForm.yAdems);
                 }
             }
         }
