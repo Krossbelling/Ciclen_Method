@@ -12,20 +12,16 @@ namespace Ciclen_Method
 {
     public partial class ResultControl : UserControl
     {
-        Form formtoopen;
-        public ResultControl(Form1 form)
-        {
+        
+        public ResultControl()
+        {            
             InitializeComponent();
-            formtoopen = form;
 
-        }
-
-        private void BackButton_Click(object sender, EventArgs e)
-        {
-            Controls.Clear();            
-            
-            
-        }
+            for (int i = 0; i < MainForm.N; i++)
+            {
+                // dataGridView1.Rows.Add(i, MainForm.x[i], Math.Round(MainForm.y[i], MainForm.eps));
+            }
+        }        
         
     }
 }

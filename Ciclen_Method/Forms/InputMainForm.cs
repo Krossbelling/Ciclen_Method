@@ -8,17 +8,13 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace Ciclen_Method
+namespace Ciclen_Method.Forms
 {
-    public partial class Result_form : Form
+    public partial class InputMainForm : Form
     {
-        
-        public Result_form()
+        public InputMainForm()
         {
             InitializeComponent();
-            
         }
-
-        
     }
 }
